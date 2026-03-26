@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Selected Work — Stableford Solutions</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+  #work { padding: 80px 0; background: var(--white); }
+
+  .work-item {
+    display: grid;
+    grid-template-columns: 100px 1fr auto;
+    gap: 48px;
+    align-items: start;
+    padding: 56px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .work-item:first-child { padding-top: 0; }
+
+  .work-num {
+    font-family: var(--font-head);
+    font-size: 80px;
+    font-weight: 700;
+    color: var(--sage);
+    line-height: 0.85;
+    letter-spacing: -0.03em;
+  }
+
+  .work-body h3 {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+
+  .work-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .work-tag {
+    font-family: var(--font-head);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--navy);
+    background: var(--sage);
+    padding: 4px 10px;
+    border-radius: 2px;
+  }
+
+  .work-body p {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.75;
+    max-width: 580px;
+  }
+
+  .work-outcome {
+    text-align: right;
+    flex-shrink: 0;
+    padding-top: 4px;
+    min-width: 160px;
+  }
+
+  .work-outcome-val {
+    font-family: var(--font-head);
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--red);
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+  }
+
+  .work-outcome-label {
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--muted);
+    margin-top: 4px;
+    letter-spacing: 0.04em;
+    line-height: 1.4;
+  }
+
+  /* ── APPROACH ── */
+  #approach {
+    background: var(--navy);
+    padding: 72px 0;
+  }
+
+  #approach h2 { color: var(--white); margin-bottom: 16px; }
+
+  #approach .lead {
+    color: rgba(219,232,225,0.7);
+    max-width: 560px;
+    margin-bottom: 0;
+  }
+
+  .approach-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .approach-list {
+    list-style: none;
+    margin-top: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .approach-list li {
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    font-size: 15px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.65);
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .approach-list li::before {
+    content: '→';
+    color: var(--red);
+    flex-shrink: 0;
+    font-weight: 400;
+  }
+
+  @media (max-width: 768px) {
+    .work-item { grid-template-columns: 60px 1fr; gap: 20px; }
+    .work-outcome { display: none; }
+    .approach-grid { grid-template-columns: 1fr; gap: 32px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">Stableford<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="work.html" class="active">Work</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="container">
+    <div class="page-header-label">Case Studies</div>
+    <h1>Selected Work</h1>
+    <p>A sample of what this looks like in practice — across sectors, organization sizes, and engagement types.</p>
+  </div>
+</div>
+
+<section id="work">
+  <div class="container">
+
+    <div class="work-item">
+      <div class="work-num">01</div>
+      <div class="work-body">
+        <div class="work-tags">
+          <span class="work-tag">Venture-Backed Startup</span>
+          <span class="work-tag">Executive Performance</span>
+          <span class="work-tag">Operating Systems</span>
+        </div>
+        <h3>Full Executive Operating System — Seed-Stage Startup</h3>
+        <p>Built end-to-end executive performance and operating infrastructure for a venture-backed startup. Work included goal alignment, milestone tracking, accountability documentation, review cadence, and board reporting structures — implemented across the leadership team and embedded into the operating rhythm of the organization.</p>
+        <p style="margin-top:14px;">The system supported three years of sustained growth without requiring external reinvention at each stage.</p>
+      </div>
+      <div class="work-outcome">
+        <div class="work-outcome-val">$600K<br>→ $6.5M</div>
+        <div class="work-outcome-label">ARR over<br>engagement period</div>
+      </div>
+    </div>
+
+    <div class="work-item">
+      <div class="work-num">02</div>
+      <div class="work-body">
+        <div class="work-tags">
+          <span class="work-tag">Distributed Teams</span>
+          <span class="work-tag">Operating Cadence</span>
+          <span class="work-tag">Cross-Functional Alignment</span>
+        </div>
+        <h3>Operating Cadence & Accountability Design — Distributed Teams</h3>
+        <p>Designed internal reporting structures, ownership mapping, and cross-functional alignment systems for distributed product, engineering, and revenue functions. Reduced ambiguity in decision-making and improved leadership visibility into progress — without adding bureaucratic overhead.</p>
+        <p style="margin-top:14px;">The structure was built to function asynchronously and across time zones, with clear escalation paths and consistent documentation practices.</p>
+      </div>
+      <div class="work-outcome">
+        <div class="work-outcome-val">3 Functions</div>
+        <div class="work-outcome-label">Aligned and<br>structured</div>
+      </div>
+    </div>
+
+    <div class="work-item">
+      <div class="work-num">03</div>
+      <div class="work-body">
+        <div class="work-tags">
+          <span class="work-tag">Nonprofit</span>
+          <span class="work-tag">Governance</span>
+          <span class="work-tag">Board Continuity</span>
+        </div>
+        <h3>Governance Structure & Board Continuity — Nonprofit</h3>
+        <p>Advised nonprofit leadership on governance framework, executive performance oversight processes, and documentation practices — with a specific focus on enabling continuity through a leadership transition and ensuring accountability structures were defensible and consistent.</p>
+        <p style="margin-top:14px;">Delivered board-ready documentation and a review process the organization could carry forward independently.</p>
+      </div>
+      <div class="work-outcome">
+        <div class="work-outcome-val">Board-ready</div>
+        <div class="work-outcome-label">Documentation<br>and process</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="approach">
+  <div class="container">
+    <div class="approach-grid">
+      <div>
+        <div class="section-label" style="color: rgba(219,232,225,0.6);">What These Have in Common</div>
+        <h2>Built to function without me</h2>
+        <p class="lead">Every engagement ends with your team owning the system — not depending on me to run it.</p>
+      </div>
+      <ul class="approach-list">
+        <li>Expectations defined before accountability begins</li>
+        <li>Progress made visible before reviews surface problems</li>
+        <li>Documentation that stands on its own</li>
+        <li>Systems designed for the next person in the role</li>
+        <li>Structure that fits the organization — not generic templates</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="cta-banner">
+  <div class="container">
+    <h2>Similar to what you're navigating?</h2>
+    <p>Let's talk about where operating clarity would make the most difference in your organization.</p>
+    <a href="contact.html" class="btn btn-primary">Start a Conversation</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">Stableford Solutions LLC</div>
+    <div class="footer-right">
+      <a href="https://www.linkedin.com/in/joanne-stableford" target="_blank" rel="noopener" class="footer-link">LinkedIn</a>
+      <span class="footer-copy">© 2026 · Anne Arundel County, Maryland</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

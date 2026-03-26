@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services — Stableford Solutions</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+  /* ── SERVICE SECTIONS ── */
+  .service-block {
+    padding: 72px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .service-block:last-of-type { border-bottom: none; }
+
+  .service-block:nth-child(even) {
+    background: var(--offwhite);
+  }
+
+  .service-inner {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 72px;
+    align-items: start;
+  }
+
+  .service-meta { padding-top: 4px; }
+
+  .service-num {
+    font-family: var(--font-head);
+    font-size: 72px;
+    font-weight: 700;
+    color: var(--sage);
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+  }
+
+  .service-meta h2 {
+    font-size: clamp(22px, 3vw, 30px);
+    margin-bottom: 0;
+  }
+
+  .service-body p {
+    font-size: 16px;
+    color: var(--muted);
+    line-height: 1.75;
+    margin-bottom: 32px;
+    max-width: 560px;
+  }
+
+  .service-bullets {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 40px;
+  }
+
+  .service-bullets li {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    line-height: 1.45;
+  }
+
+  .service-bullets li::before {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 6px;
+    background: var(--red);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 6px;
+  }
+
+  /* ── MODELS ── */
+  #models {
+    background: var(--dark);
+    padding: 80px 0;
+  }
+
+  #models h2 { color: var(--white); margin-bottom: 48px; }
+
+  .models-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: rgba(255,255,255,0.06);
+  }
+
+  .model-card {
+    background: var(--dark);
+    border: 1px solid rgba(255,255,255,0.07);
+    padding: 40px 32px;
+  }
+
+  .model-icon {
+    width: 36px;
+    height: 36px;
+    border: 2px solid var(--red);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    color: var(--red);
+    font-family: var(--font-head);
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .model-card h3 {
+    color: var(--white);
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  .model-card p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.65;
+  }
+
+  .model-card p strong {
+    display: block;
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 4px;
+    font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    .service-inner { grid-template-columns: 1fr; gap: 24px; }
+    .service-bullets { grid-template-columns: 1fr; }
+    .models-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">Stableford<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html" class="active">Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="container">
+    <div class="page-header-label">What I Do</div>
+    <h1>Services</h1>
+    <p>Structured where it matters. Practical where it counts. Built to last beyond my involvement.</p>
+  </div>
+</div>
+
+<!-- 01 -->
+<div class="service-block" id="exec">
+  <div class="container">
+    <div class="service-inner">
+      <div class="service-meta">
+        <div class="service-num">01</div>
+        <h2>Executive Performance & Accountability</h2>
+      </div>
+      <div class="service-body">
+        <p>Performance management is not an HR process — it's a governance tool. Boards and leadership teams need clear, structured approaches to executive evaluation that are grounded in documented expectations, not gut feel or annual ritual.</p>
+        <p>I design review frameworks, documentation standards, and accountability processes that work consistently — and hold up under scrutiny when it matters most.</p>
+        <ul class="service-bullets">
+          <li>Executive Director / CEO performance reviews</li>
+          <li>Performance improvement frameworks</li>
+          <li>Compensation and accountability alignment</li>
+          <li>Documentation and record-keeping standards</li>
+          <li>Goal-setting and expectation definition</li>
+          <li>Mid-cycle check-in structures</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 02 -->
+<div class="service-block" id="goals">
+  <div class="container">
+    <div class="service-inner">
+      <div class="service-meta">
+        <div class="service-num">02</div>
+        <h2>Strategic Goal Integration</h2>
+      </div>
+      <div class="service-body">
+        <p>Strategy documents are common. Strategy that actually reaches execution is not. The gap is usually a missing layer: defined milestones, clear ownership, and a cadence that makes progress visible before problems surface.</p>
+        <p>I build that layer — connecting strategic priorities to the operational structures that track them.</p>
+        <ul class="service-bullets">
+          <li>Milestone definition and sequencing</li>
+          <li>Progress tracking structures</li>
+          <li>Accountability ownership mapping</li>
+          <li>Reporting cadence design</li>
+          <li>Strategic alignment across functions</li>
+          <li>Quarterly and annual operating rhythms</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 03 -->
+<div class="service-block" id="governance">
+  <div class="container">
+    <div class="service-inner">
+      <div class="service-meta">
+        <div class="service-num">03</div>
+        <h2>Governance & Board Support</h2>
+      </div>
+      <div class="service-body">
+        <p>Effective boards need more than good intentions — they need working infrastructure. That means clear oversight structures, review processes that are consistent and documented, and governance systems that survive leadership transitions.</p>
+        <p>I work with boards and executive teams to build that infrastructure, particularly around executive accountability and continuity planning.</p>
+        <ul class="service-bullets">
+          <li>Executive oversight structure design</li>
+          <li>Board review process development</li>
+          <li>Governance documentation</li>
+          <li>Leadership transition planning</li>
+          <li>Nonprofit governance frameworks</li>
+          <li>Policy development support</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 04 -->
+<div class="service-block" id="ops">
+  <div class="container">
+    <div class="service-inner">
+      <div class="service-meta">
+        <div class="service-num">04</div>
+        <h2>Organizational Operating Systems</h2>
+      </div>
+      <div class="service-body">
+        <p>Growing organizations often outpace their internal structure. Decision-making becomes unclear. Cross-functional coordination depends on the right people being in the right room. Progress reports arrive too late to act on.</p>
+        <p>I build operating systems that distribute clarity — so leadership teams can move faster without losing accountability. This includes restructuring advisory when roles, teams, or priorities are shifting.</p>
+        <ul class="service-bullets">
+          <li>Leadership cadence design</li>
+          <li>Decision-making frameworks</li>
+          <li>Cross-functional alignment systems</li>
+          <li>Distributed team operating structures</li>
+          <li>Restructuring and transition advisory</li>
+          <li>Role clarity and accountability mapping</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ENGAGEMENT MODELS -->
+<section id="models">
+  <div class="container">
+    <div class="section-label" style="color: rgba(219,232,225,0.6);">How I Engage</div>
+    <h2>Three Ways to Work Together</h2>
+    <div class="models-grid">
+      <div class="model-card">
+        <div class="model-icon">P</div>
+        <h3>Project-Based</h3>
+        <p><strong>Defined scope. Clear deliverable.</strong>A focused engagement to design or build a specific system or process — with a clean handoff so your team owns it from day one.</p>
+      </div>
+      <div class="model-card">
+        <div class="model-icon">A</div>
+        <h3>Advisory Support</h3>
+        <p><strong>Ongoing. Light-touch.</strong>Available for review cycles, governance questions, performance decisions, and organizational changes as they arise — without a full-time engagement.</p>
+      </div>
+      <div class="model-card">
+        <div class="model-icon">E</div>
+        <h3>Embedded / Fractional</h3>
+        <p><strong>Alongside your team.</strong>Working with your leadership over time to build and implement operating systems — combining strategic thinking with direct execution support.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-banner">
+  <div class="container">
+    <h2>Not sure which fits?</h2>
+    <p>Let's talk through what you're navigating. Most engagements start with a short conversation.</p>
+    <a href="contact.html" class="btn btn-primary">Start a Conversation</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">Stableford Solutions LLC</div>
+    <div class="footer-right">
+      <a href="https://www.linkedin.com/in/joanne-stableford" target="_blank" rel="noopener" class="footer-link">LinkedIn</a>
+      <span class="footer-copy">© 2026 · Anne Arundel County, Maryland</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

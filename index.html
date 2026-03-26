@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stableford Solutions — Governance & Performance Advisory</title>
+<meta name="description" content="Joanne Stableford helps founders, executive teams, and nonprofit boards build operating systems that make expectations clear, progress visible, and accountability real.">
+<link rel="stylesheet" href="shared.css">
+<style>
+  /* ── HERO ── */
+  #hero {
+    background: var(--dark);
+    padding: 100px 0 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--red);
+  }
+
+  #hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23034687' fill-opacity='0.12'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+  }
+
+  .hero-inner { position: relative; z-index: 1; }
+
+  .hero-eyebrow {
+    font-family: var(--font-head);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 20px;
+  }
+
+  #hero h1 {
+    font-family: var(--font-head);
+    font-size: clamp(44px, 6.5vw, 80px);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--white);
+    line-height: 1.0;
+    margin-bottom: 28px;
+    max-width: 720px;
+  }
+
+  #hero h1 span { color: var(--sage); }
+
+  .hero-sub {
+    font-size: 17px;
+    font-weight: 300;
+    color: rgba(219,232,225,0.72);
+    max-width: 500px;
+    line-height: 1.7;
+    margin-bottom: 44px;
+  }
+
+  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+  .hero-bottom {
+    margin-top: 80px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+  }
+
+  .hero-stat {
+    padding: 0 32px;
+    border-right: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .hero-stat:first-child { padding-left: 0; }
+  .hero-stat:last-child { border-right: none; }
+
+  .hero-stat-val {
+    font-family: var(--font-head);
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--sage);
+    letter-spacing: 0.02em;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .hero-stat-label {
+    font-size: 13px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.4;
+  }
+
+  /* ── PROBLEM ── */
+  #problem {
+    background: var(--cream);
+    padding: 72px 0;
+  }
+
+  .problem-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 72px;
+    align-items: center;
+  }
+
+  .problem-headline {
+    font-family: var(--font-head);
+    font-size: clamp(28px, 3.5vw, 40px);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--navy);
+    line-height: 1.1;
+  }
+
+  .problem-headline em {
+    font-style: normal;
+    color: var(--red);
+  }
+
+  .problem-body p {
+    font-size: 16px;
+    color: var(--muted);
+    margin-bottom: 16px;
+  }
+
+  .problem-body p strong {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  /* ── SERVICES PREVIEW ── */
+  #services-preview {
+    background: var(--offwhite);
+    padding: 80px 0;
+  }
+
+  .services-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 48px;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    background: var(--border);
+  }
+
+  .svc-card {
+    background: var(--white);
+    padding: 40px 36px;
+    border-top: 3px solid transparent;
+    transition: border-color 0.2s, background 0.2s;
+    text-decoration: none;
+    display: block;
+    color: inherit;
+  }
+
+  .svc-card:hover {
+    border-top-color: var(--navy);
+    background: var(--sage);
+  }
+
+  .svc-num {
+    font-family: var(--font-head);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    color: var(--red);
+    margin-bottom: 14px;
+  }
+
+  .svc-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .svc-card p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+
+  /* ── WHO ── */
+  #who {
+    background: var(--navy);
+    padding: 72px 0;
+    text-align: center;
+  }
+
+  #who h2 { color: var(--white); margin-bottom: 12px; }
+  #who .lead { color: rgba(219,232,225,0.7); margin: 0 auto 36px; text-align: center; }
+
+  .who-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .who-tag {
+    font-family: var(--font-head);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--white);
+    border: 1px solid rgba(219,232,225,0.3);
+    padding: 9px 18px;
+    border-radius: 2px;
+  }
+
+  @media (max-width: 768px) {
+    .problem-grid { grid-template-columns: 1fr; gap: 32px; }
+    .services-grid { grid-template-columns: 1fr; }
+    .hero-bottom { grid-template-columns: 1fr; gap: 24px; }
+    .hero-stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); padding: 0 0 24px; }
+    .hero-stat:last-child { border-bottom: none; }
+    .services-header { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">Stableford<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section id="hero">
+  <div class="container hero-inner">
+    <div class="hero-eyebrow">Stableford Solutions</div>
+    <h1>Strategy without <span>systems</span> doesn't execute.</h1>
+    <p class="hero-sub">
+      I help founders, executive teams, and nonprofit boards build the operating infrastructure that turns strategic intent into clear expectations, visible progress, and real accountability.
+    </p>
+    <div class="hero-actions">
+      <a href="contact.html" class="btn btn-primary">Start a Conversation</a>
+      <a href="services.html" class="btn btn-outline-white">View Services</a>
+    </div>
+
+    <div class="hero-bottom">
+      <div class="hero-stat">
+        <div class="hero-stat-val">$600K → $6.5M</div>
+        <div class="hero-stat-label">ARR growth supported,<br>seed to scale</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-val">3 Models</div>
+        <div class="hero-stat-label">Project, advisory,<br>or embedded/fractional</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-val">For-profit + Nonprofit</div>
+        <div class="hero-stat-label">Direct experience across<br>both sectors</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="problem">
+  <div class="container">
+    <div class="problem-grid">
+      <div class="problem-headline">
+        Most organizations don't fail on strategy.<br>
+        They fail on <em>execution.</em>
+      </div>
+      <div class="problem-body">
+        <p>When expectations are unclear, progress is invisible, and accountability is inconsistent — even strong strategy stalls. The gap between what leadership intends and what the organization does widens, and compounds.</p>
+        <p><strong>I close that gap.</strong> Through operating systems, governance frameworks, and performance accountability tools built to last beyond my involvement.</p>
+        <a href="services.html" class="btn btn-outline" style="margin-top:8px;">See How →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services-preview">
+  <div class="container">
+    <div class="services-header">
+      <div>
+        <div class="section-label">What I Do</div>
+        <h2>Four Areas of Focus</h2>
+      </div>
+      <a href="services.html" class="btn btn-outline">All Services →</a>
+    </div>
+    <div class="services-grid">
+      <a href="services.html#exec" class="svc-card">
+        <div class="svc-num">01</div>
+        <h3>Executive Performance & Accountability</h3>
+        <p>Structured review processes, documentation standards, and accountability frameworks grounded in clear, pre-defined expectations.</p>
+      </a>
+      <a href="services.html#goals" class="svc-card">
+        <div class="svc-num">02</div>
+        <h3>Strategic Goal Integration</h3>
+        <p>Connecting strategy to execution through milestone definition, progress tracking, and ownership accountability.</p>
+      </a>
+      <a href="services.html#governance" class="svc-card">
+        <div class="svc-num">03</div>
+        <h3>Governance & Board Support</h3>
+        <p>Executive oversight structures, review processes, and governance documentation that support continuity through leadership change.</p>
+      </a>
+      <a href="services.html#ops" class="svc-card">
+        <div class="svc-num">04</div>
+        <h3>Organizational Operating Systems</h3>
+        <p>Decision-making frameworks, leadership cadence, and cross-functional alignment built for clarity — not bureaucracy.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="who">
+  <div class="container">
+    <div class="section-label" style="color: rgba(219,232,225,0.6);">Who I Work With</div>
+    <h2>Organizations navigating real complexity</h2>
+    <p class="lead">From venture-backed startups to nonprofit boards — I work where operational clarity is the difference between growth and gridlock.</p>
+    <div class="who-tags">
+      <div class="who-tag">Seed to Series B</div>
+      <div class="who-tag">Nonprofit & Associations</div>
+      <div class="who-tag">Founder-Led Teams</div>
+      <div class="who-tag">Boards Seeking Oversight Structure</div>
+      <div class="who-tag">Distributed Teams</div>
+      <div class="who-tag">Growth & Transition</div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-banner">
+  <div class="container">
+    <h2>Ready to build structure that lasts?</h2>
+    <p>Let's talk through what your organization is navigating and where operating clarity would help most.</p>
+    <a href="contact.html" class="btn btn-primary">Get in Touch</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">Stableford Solutions LLC</div>
+    <div class="footer-right">
+      <a href="https://www.linkedin.com/in/joanne-stableford" target="_blank" rel="noopener" class="footer-link">LinkedIn</a>
+      <span class="footer-copy">© 2026 · Anne Arundel County, Maryland</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
