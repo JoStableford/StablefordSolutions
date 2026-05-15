@@ -6,21 +6,13 @@
 <title>Services — Stableford Solutions</title>
 <link rel="stylesheet" href="shared.css">
 <style>
-  /* ── SERVICE SECTIONS ── */
-  .service-block {
-    padding: 72px 0;
-    border-bottom: 1px solid var(--border);
-  }
-
+  .service-block { padding: 72px 0; border-bottom: 1px solid var(--border); }
   .service-block:last-of-type { border-bottom: none; }
-
-  .service-block:nth-child(even) {
-    background: var(--offwhite);
-  }
+  .service-block:nth-child(even) { background: var(--offwhite); }
 
   .service-inner {
     display: grid;
-    grid-template-columns: 300px 1fr;
+    grid-template-columns: 280px 1fr;
     gap: 72px;
     align-items: start;
   }
@@ -37,16 +29,13 @@
     margin-bottom: 16px;
   }
 
-  .service-meta h2 {
-    font-size: clamp(22px, 3vw, 30px);
-    margin-bottom: 0;
-  }
+  .service-meta h2 { font-size: clamp(20px, 2.5vw, 26px); margin-bottom: 0; }
 
-  .service-body p {
+  .service-body > p {
     font-size: 16px;
     color: var(--muted);
-    line-height: 1.75;
-    margin-bottom: 32px;
+    line-height: 1.78;
+    margin-bottom: 28px;
     max-width: 560px;
   }
 
@@ -59,7 +48,6 @@
 
   .service-bullets li {
     font-size: 14px;
-    font-weight: 400;
     color: var(--text);
     display: flex;
     align-items: flex-start;
@@ -70,27 +58,23 @@
   .service-bullets li::before {
     content: '';
     display: block;
-    width: 6px;
-    height: 6px;
+    width: 6px; height: 6px;
     background: var(--red);
     border-radius: 50%;
     flex-shrink: 0;
     margin-top: 6px;
   }
 
-  /* ── MODELS ── */
-  #models {
-    background: var(--dark);
-    padding: 80px 0;
-  }
-
+  /* ENGAGEMENT MODELS */
+  #models { background: var(--dark); padding: 80px 0; }
+  #models .section-label { color: rgba(219,232,225,0.55); }
   #models h2 { color: var(--white); margin-bottom: 48px; }
 
   .models-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2px;
-    background: rgba(255,255,255,0.06);
+    background: rgba(255,255,255,0.05);
   }
 
   .model-card {
@@ -99,39 +83,31 @@
     padding: 40px 32px;
   }
 
-  .model-icon {
-    width: 36px;
-    height: 36px;
-    border: 2px solid var(--red);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-    color: var(--red);
+  .model-badge {
+    display: inline-block;
     font-family: var(--font-head);
-    font-size: 14px;
-    font-weight: 700;
-  }
-
-  .model-card h3 {
-    color: var(--white);
-    font-size: 18px;
-    margin-bottom: 12px;
-  }
-
-  .model-card p {
-    font-size: 14px;
-    color: rgba(255,255,255,0.5);
-    line-height: 1.65;
-  }
-
-  .model-card p strong {
-    display: block;
-    color: rgba(255,255,255,0.75);
-    margin-bottom: 4px;
+    font-size: 11px;
     font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--red);
+    border: 1px solid rgba(219,31,72,0.35);
+    padding: 5px 12px;
+    border-radius: 2px;
+    margin-bottom: 20px;
   }
+
+  .model-card h3 { color: var(--white); font-size: 19px; margin-bottom: 8px; }
+
+  .model-tagline {
+    font-size: 13px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.5);
+    font-style: italic;
+    margin-bottom: 14px;
+  }
+
+  .model-card p { font-size: 14px; color: rgba(255,255,255,0.48); line-height: 1.7; }
 
   @media (max-width: 768px) {
     .service-inner { grid-template-columns: 1fr; gap: 24px; }
@@ -159,28 +135,30 @@
   <div class="container">
     <div class="page-header-label">What I Do</div>
     <h1>Services</h1>
-    <p>Structured where it matters. Practical where it counts. Built to last beyond my involvement.</p>
+    <p>I work across four connected areas — independently or together, depending on where your organization is and what it needs most.</p>
   </div>
 </div>
 
 <!-- 01 -->
-<div class="service-block" id="exec">
+<div class="service-block" id="biz-ops">
   <div class="container">
     <div class="service-inner">
       <div class="service-meta">
         <div class="service-num">01</div>
-        <h2>Executive Performance & Accountability</h2>
+        <h2>Business Operations & Systems</h2>
       </div>
       <div class="service-body">
-        <p>Performance management is not an HR process — it's a governance tool. Boards and leadership teams need clear, structured approaches to executive evaluation that are grounded in documented expectations, not gut feel or annual ritual.</p>
-        <p>I design review frameworks, documentation standards, and accountability processes that work consistently — and hold up under scrutiny when it matters most.</p>
+        <p>Most growing organizations have processes — they just haven't designed them intentionally. Work happens, but inconsistently. Systems exist, but they don't talk to each other. Compliance is managed reactively. Technology gets adopted without a plan for how it fits together.</p>
+        <p>I build the operational infrastructure that makes a business run deliberately — from core process design through technology selection, implementation, and the compliance and business enablement systems that support growth into new markets or channels.</p>
         <ul class="service-bullets">
-          <li>Executive Director / CEO performance reviews</li>
-          <li>Performance improvement frameworks</li>
-          <li>Compensation and accountability alignment</li>
-          <li>Documentation and record-keeping standards</li>
-          <li>Goal-setting and expectation definition</li>
-          <li>Mid-cycle check-in structures</li>
+          <li>Process design and standardization</li>
+          <li>Technology selection and implementation</li>
+          <li>Software migration and integration</li>
+          <li>Business enablement systems</li>
+          <li>Compliance infrastructure</li>
+          <li>Government contracting readiness</li>
+          <li>Vendor and contract management</li>
+          <li>Financial reporting and visibility</li>
         </ul>
       </div>
     </div>
@@ -188,23 +166,25 @@
 </div>
 
 <!-- 02 -->
-<div class="service-block" id="goals">
+<div class="service-block" id="hr-people">
   <div class="container">
     <div class="service-inner">
       <div class="service-meta">
         <div class="service-num">02</div>
-        <h2>Strategic Goal Integration</h2>
+        <h2>HR & People Operations</h2>
       </div>
       <div class="service-body">
-        <p>Strategy documents are common. Strategy that actually reaches execution is not. The gap is usually a missing layer: defined milestones, clear ownership, and a cadence that makes progress visible before problems surface.</p>
-        <p>I build that layer — connecting strategic priorities to the operational structures that track them.</p>
+        <p>People systems are usually the last thing growing organizations build intentionally and the first thing that causes problems. Hiring happens informally until it doesn't work. Onboarding is inconsistent. Compensation decisions get made without a framework. Policies get written in response to problems rather than in anticipation of them.</p>
+        <p>I design and build the HR and people infrastructure that lets organizations hire, onboard, develop, and retain people well — at whatever stage they're at.</p>
         <ul class="service-bullets">
-          <li>Milestone definition and sequencing</li>
-          <li>Progress tracking structures</li>
-          <li>Accountability ownership mapping</li>
-          <li>Reporting cadence design</li>
-          <li>Strategic alignment across functions</li>
-          <li>Quarterly and annual operating rhythms</li>
+          <li>Hiring process and workflow design</li>
+          <li>Onboarding systems and documentation</li>
+          <li>Benefits structure and administration</li>
+          <li>Equity and compensation frameworks</li>
+          <li>HR policy development</li>
+          <li>Performance management systems</li>
+          <li>HRIS and ATS selection and implementation</li>
+          <li>Multi-state and global compliance</li>
         </ul>
       </div>
     </div>
@@ -217,18 +197,20 @@
     <div class="service-inner">
       <div class="service-meta">
         <div class="service-num">03</div>
-        <h2>Governance & Board Support</h2>
+        <h2>Governance & Performance Management</h2>
       </div>
       <div class="service-body">
-        <p>Effective boards need more than good intentions — they need working infrastructure. That means clear oversight structures, review processes that are consistent and documented, and governance systems that survive leadership transitions.</p>
-        <p>I work with boards and executive teams to build that infrastructure, particularly around executive accountability and continuity planning.</p>
+        <p>Accountability without structure isn't accountability — it's guesswork. Boards and leadership teams need clear frameworks for evaluating performance, making decisions, and documenting what they've agreed to. Without them, leadership transitions are disruptive, accountability is inconsistent, and organizations are exposed when things go wrong.</p>
+        <p>I design governance frameworks and performance management systems that make accountability clear, consistent, and defensible — for nonprofit boards, executive teams, and the leadership layers beneath them.</p>
         <ul class="service-bullets">
-          <li>Executive oversight structure design</li>
-          <li>Board review process development</li>
-          <li>Governance documentation</li>
+          <li>Executive performance review design</li>
+          <li>Board governance frameworks</li>
+          <li>Documentation and recordkeeping standards</li>
+          <li>Performance improvement processes</li>
+          <li>Compensation and accountability alignment</li>
           <li>Leadership transition planning</li>
-          <li>Nonprofit governance frameworks</li>
-          <li>Policy development support</li>
+          <li>Strategic goal integration into reviews</li>
+          <li>Governance continuity infrastructure</li>
         </ul>
       </div>
     </div>
@@ -236,23 +218,25 @@
 </div>
 
 <!-- 04 -->
-<div class="service-block" id="ops">
+<div class="service-block" id="strategy">
   <div class="container">
     <div class="service-inner">
       <div class="service-meta">
         <div class="service-num">04</div>
-        <h2>Organizational Operating Systems</h2>
+        <h2>Strategy & Organizational Design</h2>
       </div>
       <div class="service-body">
-        <p>Growing organizations often outpace their internal structure. Decision-making becomes unclear. Cross-functional coordination depends on the right people being in the right room. Progress reports arrive too late to act on.</p>
-        <p>I build operating systems that distribute clarity — so leadership teams can move faster without losing accountability. This includes restructuring advisory when roles, teams, or priorities are shifting.</p>
+        <p>Strategy without execution infrastructure is a document. Execution without strategic alignment is busy work. The layer connecting them — operating cadence, clear goal ownership, cross-functional coordination, and an organizational structure that matches where you're going — is what most scaling organizations are missing.</p>
+        <p>I build that connective layer, working alongside leadership to translate priorities into operating structure and ensure teams can execute against what actually matters.</p>
         <ul class="service-bullets">
-          <li>Leadership cadence design</li>
-          <li>Decision-making frameworks</li>
-          <li>Cross-functional alignment systems</li>
-          <li>Distributed team operating structures</li>
+          <li>Operating cadence and rhythm design</li>
+          <li>Organizational structure and design</li>
+          <li>Strategic goal alignment and tracking</li>
+          <li>Cross-functional coordination systems</li>
+          <li>KPI and reporting frameworks</li>
+          <li>Leadership decision-making infrastructure</li>
           <li>Restructuring and transition advisory</li>
-          <li>Role clarity and accountability mapping</li>
+          <li>Executive and board-facing reporting</li>
         </ul>
       </div>
     </div>
@@ -262,23 +246,26 @@
 <!-- ENGAGEMENT MODELS -->
 <section id="models">
   <div class="container">
-    <div class="section-label" style="color: rgba(219,232,225,0.6);">How I Engage</div>
-    <h2>Three Ways to Work Together</h2>
+    <div class="section-label">How I Engage</div>
+    <h2>Three ways to work together</h2>
     <div class="models-grid">
       <div class="model-card">
-        <div class="model-icon">P</div>
-        <h3>Project-Based</h3>
-        <p><strong>Defined scope. Clear deliverable.</strong>A focused engagement to design or build a specific system or process — with a clean handoff so your team owns it from day one.</p>
+        <div class="model-badge">Project-Based</div>
+        <h3>Defined Scope</h3>
+        <p class="model-tagline">A specific system or process, built and handed off.</p>
+        <p>Best for organizations that have identified a clear problem — a governance framework that needs designing, a technology migration that needs managing, an HR policy set that needs building. We define the scope, I deliver, and your team owns it from day one.</p>
       </div>
       <div class="model-card">
-        <div class="model-icon">A</div>
-        <h3>Advisory Support</h3>
-        <p><strong>Ongoing. Light-touch.</strong>Available for review cycles, governance questions, performance decisions, and organizational changes as they arise — without a full-time engagement.</p>
+        <div class="model-badge">Advisory</div>
+        <h3>Ongoing Support</h3>
+        <p class="model-tagline">A thinking partner available when you need one.</p>
+        <p>Best for leadership teams that have internal capacity but benefit from experienced outside perspective on operations, people decisions, governance questions, and organizational changes as they arise. Light-touch, high-value, no retainer bloat.</p>
       </div>
       <div class="model-card">
-        <div class="model-icon">E</div>
-        <h3>Embedded / Fractional</h3>
-        <p><strong>Alongside your team.</strong>Working with your leadership over time to build and implement operating systems — combining strategic thinking with direct execution support.</p>
+        <div class="model-badge">Embedded / Fractional</div>
+        <h3>Inside the Organization</h3>
+        <p class="model-tagline">Working alongside your team over time.</p>
+        <p>Best for organizations that need more than a project deliverable — they need an experienced operator helping to build, implement, and refine systems over a sustained period. The fractional model gives you senior-level operational leadership without the full-time overhead.</p>
       </div>
     </div>
   </div>
@@ -286,9 +273,9 @@
 
 <div class="cta-banner">
   <div class="container">
-    <h2>Not sure which fits?</h2>
-    <p>Let's talk through what you're navigating. Most engagements start with a short conversation.</p>
-    <a href="contact.html" class="btn btn-primary">Start a Conversation</a>
+    <h2>Not sure which fits your situation?</h2>
+    <p>Most engagements start with a conversation. Let's figure out what makes sense together.</p>
+    <a href="contact.html" class="btn btn-primary">Get in Touch</a>
   </div>
 </div>
 
@@ -301,6 +288,5 @@
     </div>
   </div>
 </footer>
-
 </body>
 </html>

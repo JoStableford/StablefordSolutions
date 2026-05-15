@@ -3,48 +3,50 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Selected Work — Stableford Solutions</title>
+<title>Work — Stableford Solutions</title>
 <link rel="stylesheet" href="shared.css">
 <style>
-  #work { padding: 80px 0; background: var(--white); }
+  #work { padding: 72px 0; background: var(--white); }
+
+  .work-intro {
+    max-width: 600px;
+    margin-bottom: 64px;
+  }
+
+  .work-intro p { font-size: 16px; color: var(--muted); line-height: 1.75; }
 
   .work-item {
     display: grid;
-    grid-template-columns: 100px 1fr auto;
-    gap: 48px;
+    grid-template-columns: 60px 1fr;
+    gap: 36px;
     align-items: start;
-    padding: 56px 0;
+    padding: 44px 0;
     border-bottom: 1px solid var(--border);
   }
 
-  .work-item:first-child { padding-top: 0; }
+  .work-item:first-of-type { border-top: 1px solid var(--border); }
 
   .work-num {
     font-family: var(--font-head);
-    font-size: 80px;
+    font-size: 56px;
     font-weight: 700;
     color: var(--sage);
-    line-height: 0.85;
-    letter-spacing: -0.03em;
-  }
-
-  .work-body h3 {
-    font-size: 24px;
-    margin-bottom: 16px;
+    line-height: 0.9;
+    letter-spacing: -0.02em;
   }
 
   .work-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
   }
 
   .work-tag {
     font-family: var(--font-head);
     font-size: 10px;
     font-weight: 500;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--navy);
     background: var(--sage);
@@ -52,90 +54,60 @@
     border-radius: 2px;
   }
 
+  .work-body h3 { font-size: 20px; font-weight: 500; margin-bottom: 12px; }
+
   .work-body p {
     font-size: 15px;
     color: var(--muted);
     line-height: 1.75;
-    max-width: 580px;
+    max-width: 640px;
   }
 
-  .work-outcome {
-    text-align: right;
-    flex-shrink: 0;
-    padding-top: 4px;
-    min-width: 160px;
-  }
-
-  .work-outcome-val {
-    font-family: var(--font-head);
-    font-size: 28px;
-    font-weight: 700;
-    color: var(--red);
-    line-height: 1.1;
-    letter-spacing: 0.02em;
-  }
-
-  .work-outcome-label {
-    font-size: 12px;
-    font-weight: 300;
-    color: var(--muted);
-    margin-top: 4px;
-    letter-spacing: 0.04em;
-    line-height: 1.4;
-  }
-
-  /* ── APPROACH ── */
-  #approach {
+  /* What these have in common */
+  #common {
     background: var(--navy);
-    padding: 72px 0;
+    padding: 64px 0;
   }
 
-  #approach h2 { color: var(--white); margin-bottom: 16px; }
+  #common h2 { color: var(--white); margin-bottom: 12px; }
 
-  #approach .lead {
-    color: rgba(219,232,225,0.7);
-    max-width: 560px;
+  #common .lead {
+    color: rgba(219,232,225,0.65);
     margin-bottom: 0;
   }
 
-  .approach-grid {
+  .common-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 80px;
-    align-items: start;
+    align-items: center;
   }
 
-  .approach-list {
+  .common-list {
     list-style: none;
-    margin-top: 48px;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
     border-top: 1px solid rgba(255,255,255,0.1);
   }
 
-  .approach-list li {
-    padding: 18px 0;
+  .common-list li {
+    padding: 14px 0;
     border-bottom: 1px solid rgba(255,255,255,0.1);
     font-size: 15px;
     font-weight: 300;
-    color: rgba(255,255,255,0.65);
+    color: rgba(255,255,255,0.6);
     display: flex;
+    gap: 12px;
     align-items: flex-start;
-    gap: 14px;
   }
 
-  .approach-list li::before {
+  .common-list li::before {
     content: '→';
     color: var(--red);
     flex-shrink: 0;
-    font-weight: 400;
   }
 
   @media (max-width: 768px) {
-    .work-item { grid-template-columns: 60px 1fr; gap: 20px; }
-    .work-outcome { display: none; }
-    .approach-grid { grid-template-columns: 1fr; gap: 32px; }
+    .work-item { grid-template-columns: 44px 1fr; gap: 20px; }
+    .common-grid { grid-template-columns: 1fr; gap: 32px; }
   }
 </style>
 </head>
@@ -156,30 +128,30 @@
 
 <div class="page-header">
   <div class="container">
-    <div class="page-header-label">Case Studies</div>
+    <div class="page-header-label">Experience</div>
     <h1>Selected Work</h1>
-    <p>A sample of what this looks like in practice — across sectors, organization sizes, and engagement types.</p>
+    <p>A few examples of what this looks like in practice.</p>
   </div>
 </div>
 
 <section id="work">
   <div class="container">
 
+    <div class="work-intro">
+      <p>Client confidentiality matters, so these examples are anonymized. They're meant to give a sense of the types of problems I work on and how I approach them — not to be a portfolio. If you want to know more about a specific type of engagement, the best path is a conversation.</p>
+    </div>
+
     <div class="work-item">
       <div class="work-num">01</div>
       <div class="work-body">
         <div class="work-tags">
-          <span class="work-tag">Venture-Backed Startup</span>
-          <span class="work-tag">Executive Performance</span>
-          <span class="work-tag">Operating Systems</span>
+          <span class="work-tag">VC-Backed Startup</span>
+          <span class="work-tag">Business Operations</span>
+          <span class="work-tag">HR & Finance</span>
         </div>
-        <h3>Full Executive Operating System — Seed-Stage Startup</h3>
-        <p>Built end-to-end executive performance and operating infrastructure for a venture-backed startup. Work included goal alignment, milestone tracking, accountability documentation, review cadence, and board reporting structures — implemented across the leadership team and embedded into the operating rhythm of the organization.</p>
-        <p style="margin-top:14px;">The system supported three years of sustained growth without requiring external reinvention at each stage.</p>
-      </div>
-      <div class="work-outcome">
-        <div class="work-outcome-val">$600K<br>→ $6.5M</div>
-        <div class="work-outcome-label">ARR over<br>engagement period</div>
+        <h3>End-to-end operator — high-growth technology startup</h3>
+        <p>Joined a venture-backed startup as the operational lead when the company had outgrown its founding-stage systems. Built the operational, financial, and people infrastructure from scratch — including HR, compliance, financial reporting, performance management, and cross-functional operating cadence — that allowed the team to scale without losing control. Owned P&L and partnered directly with the CEO on strategic planning, fundraising readiness, and organizational effectiveness.</p>
+        <p style="margin-top:10px; font-size:13px; color: var(--navy); font-weight:500;">Outcome: $600K → $6.5M ARR over the engagement period.</p>
       </div>
     </div>
 
@@ -187,17 +159,13 @@
       <div class="work-num">02</div>
       <div class="work-body">
         <div class="work-tags">
-          <span class="work-tag">Distributed Teams</span>
-          <span class="work-tag">Operating Cadence</span>
-          <span class="work-tag">Cross-Functional Alignment</span>
+          <span class="work-tag">Nonprofit Association</span>
+          <span class="work-tag">Governance</span>
+          <span class="work-tag">Performance Management</span>
         </div>
-        <h3>Operating Cadence & Accountability Design — Distributed Teams</h3>
-        <p>Designed internal reporting structures, ownership mapping, and cross-functional alignment systems for distributed product, engineering, and revenue functions. Reduced ambiguity in decision-making and improved leadership visibility into progress — without adding bureaucratic overhead.</p>
-        <p style="margin-top:14px;">The structure was built to function asynchronously and across time zones, with clear escalation paths and consistent documentation practices.</p>
-      </div>
-      <div class="work-outcome">
-        <div class="work-outcome-val">3 Functions</div>
-        <div class="work-outcome-label">Aligned and<br>structured</div>
+        <h3>Executive performance review system — nonprofit association</h3>
+        <p>Designed and implemented a governance-aligned executive performance review framework for a nonprofit association whose board had identified gaps in how it evaluated and held its Executive Director accountable. Delivered a complete system including evaluation instruments, documentation standards, mid-cycle check-in structures, strategic goal integration, and compensation decision guidance — built to be repeatable across board leadership transitions.</p>
+        <p style="margin-top:10px; font-size:13px; color: var(--navy); font-weight:500;">Outcome: Board-ready process and documentation the organization owns independently.</p>
       </div>
     </div>
 
@@ -205,37 +173,33 @@
       <div class="work-num">03</div>
       <div class="work-body">
         <div class="work-tags">
-          <span class="work-tag">Nonprofit</span>
-          <span class="work-tag">Governance</span>
-          <span class="work-tag">Board Continuity</span>
+          <span class="work-tag">Small Business</span>
+          <span class="work-tag">Business Enablement</span>
+          <span class="work-tag">Government & eCommerce</span>
         </div>
-        <h3>Governance Structure & Board Continuity — Nonprofit</h3>
-        <p>Advised nonprofit leadership on governance framework, executive performance oversight processes, and documentation practices — with a specific focus on enabling continuity through a leadership transition and ensuring accountability structures were defensible and consistent.</p>
-        <p style="margin-top:14px;">Delivered board-ready documentation and a review process the organization could carry forward independently.</p>
-      </div>
-      <div class="work-outcome">
-        <div class="work-outcome-val">Board-ready</div>
-        <div class="work-outcome-label">Documentation<br>and process</div>
+        <h3>Business systems & market expansion — scaling small business</h3>
+        <p>Embedded with a small business to support a broad operational buildout alongside two parallel market expansion tracks: government contracting approval and eCommerce infrastructure. Work spanned systems assessment, process improvement, technology implementation, compliance readiness, and the operational coordination needed to pursue both tracks simultaneously without disrupting the existing business.</p>
+        <p style="margin-top:10px; font-size:13px; color: var(--navy); font-weight:500;">Outcome: Active engagement — government and eCommerce channels in progress.</p>
       </div>
     </div>
 
   </div>
 </section>
 
-<section id="approach">
+<section id="common">
   <div class="container">
-    <div class="approach-grid">
+    <div class="common-grid">
       <div>
-        <div class="section-label" style="color: rgba(219,232,225,0.6);">What These Have in Common</div>
-        <h2>Built to function without me</h2>
-        <p class="lead">Every engagement ends with your team owning the system — not depending on me to run it.</p>
+        <div class="section-label" style="color:rgba(219,232,225,0.55)">The Through-Line</div>
+        <h2>Different organizations. The same underlying problem.</h2>
+        <p class="lead">In every case, the organization had grown or changed faster than its systems could support. The specific work looks different each time — but the approach doesn't.</p>
       </div>
-      <ul class="approach-list">
-        <li>Expectations defined before accountability begins</li>
-        <li>Progress made visible before reviews surface problems</li>
-        <li>Documentation that stands on its own</li>
-        <li>Systems designed for the next person in the role</li>
-        <li>Structure that fits the organization — not generic templates</li>
+      <ul class="common-list">
+        <li>Start with what's actually happening, not what should be</li>
+        <li>Build for the organization, not a generic template</li>
+        <li>Make expectations explicit before building accountability</li>
+        <li>Document everything so it doesn't live in one person's head</li>
+        <li>Hand off something the team can run without me</li>
       </ul>
     </div>
   </div>
@@ -243,8 +207,8 @@
 
 <div class="cta-banner">
   <div class="container">
-    <h2>Similar to what you're navigating?</h2>
-    <p>Let's talk about where operating clarity would make the most difference in your organization.</p>
+    <h2>Working through something similar?</h2>
+    <p>Let's talk about what your organization is navigating and whether I'm the right fit to help.</p>
     <a href="contact.html" class="btn btn-primary">Start a Conversation</a>
   </div>
 </div>
@@ -258,6 +222,5 @@
     </div>
   </div>
 </footer>
-
 </body>
 </html>
