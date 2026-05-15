@@ -1,0 +1,190 @@
+/* ── HOME PAGE ── */
+
+#hero {
+  background: var(--hero-gradient);
+  min-height: 520px;
+  display: grid;
+  grid-template-columns: 38% 1fr;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-geo-area { position: relative; background: var(--white); overflow: hidden; }
+
+.hero-geo-area::after {
+  content: '';
+  position: absolute;
+  top: 0; right: -1px;
+  width: 80px; height: 100%;
+  background: var(--hero-gradient);
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+}
+
+.hero-nodes-svg { position: absolute; top: 0; left: 0; width: 90%; height: 85%; }
+.hero-sage-tri  { position: absolute; bottom: 0; left: 0; right: 0; }
+
+.hero-content-area {
+  padding: 72px 48px 60px 52px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-eyebrow {
+  font-family: var(--font-head);
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 18px;
+  display: block;
+}
+
+.hero-script-name {
+  font-family: var(--font-script);
+  font-size: clamp(44px, 5vw, 64px);
+  font-weight: 400;
+  color: var(--white);
+  line-height: 1.05;
+  margin-bottom: 8px;
+}
+
+.hero-tagline {
+  font-family: var(--font-head);
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #c8dbd4;
+  margin-bottom: 28px;
+  display: block;
+}
+
+.hero-body {
+  font-size: 17px;
+  font-weight: 400;
+  color: #c8dbd4;
+  max-width: 440px;
+  line-height: 1.75;
+  margin-bottom: 36px;
+}
+
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+#hero-stats { background: var(--navy-dk); border-top: 1px solid rgba(255,255,255,0.08); }
+
+.stats-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.stat-item {
+  padding: 28px 32px;
+  border-right: 1px solid rgba(255,255,255,0.07);
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.stat-item:last-child { border-right: none; }
+
+.stat-val {
+  font-family: var(--font-head);
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--sage);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.stat-label { font-size: 16px; font-weight: 400; color: #9dbece; line-height: 1.5; }
+
+#problem { background: var(--white); padding: 88px 0 72px; }
+
+.problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+
+.problem-geo { position: relative; }
+
+.problem-geo::before {
+  content: '';
+  position: absolute;
+  top: -24px; left: -24px;
+  width: 80px; height: 80px;
+  background: var(--sage);
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+  opacity: 0.6;
+}
+
+.problem-headline {
+  font-family: var(--font-head);
+  font-size: clamp(24px, 3vw, 34px);
+  font-weight: 500;
+  color: var(--navy);
+  line-height: 1.25;
+  position: relative;
+}
+
+.problem-headline em { font-style: normal; color: var(--red); }
+
+.problem-body p { font-size: 16px; font-weight: 400; color: var(--muted); margin-bottom: 14px; line-height: 1.78; }
+.problem-body p strong { color: var(--text); font-weight: 500; }
+
+#services-preview { background: var(--offwhite); padding: 80px 0; position: relative; }
+
+#services-preview::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 44px;
+  background: var(--white);
+  clip-path: polygon(0 0, 0 100%, 100% 0);
+}
+
+.services-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px; flex-wrap: wrap; gap: 16px; }
+
+.services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; background: var(--border); }
+
+.svc-card {
+  background: var(--white);
+  padding: 36px 32px;
+  border-left: 4px solid transparent;
+  transition: border-color 0.2s, background 0.2s;
+  text-decoration: none;
+  display: block;
+  color: inherit;
+}
+
+.svc-card:hover { border-left-color: var(--navy); background: var(--sage); }
+
+.svc-num { font-family: var(--font-head); font-size: 16px; font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase; color: var(--navy); opacity: 0.5; margin-bottom: 12px; }
+.svc-card h3 { font-size: 20px; font-weight: 500; margin-bottom: 10px; }
+.svc-card p { font-size: 16px; font-weight: 400; color: var(--muted); line-height: 1.65; }
+
+#who { background: var(--hero-gradient); padding: 80px 0; text-align: center; position: relative; overflow: hidden; }
+#who::after { content: ''; position: absolute; bottom: 0; right: 0; width: 0; height: 0; border-style: solid; border-width: 0 0 200px 300px; border-color: transparent transparent rgba(219,232,225,0.1) transparent; }
+#who::before { content: ''; position: absolute; top: 0; left: 0; width: 0; height: 0; border-style: solid; border-width: 120px 160px 0 0; border-color: rgba(255,255,255,0.04) transparent transparent transparent; }
+#who h2 { color: var(--white); margin-bottom: 10px; position: relative; z-index: 1; }
+#who .lead { color: #c8dbd4; margin: 0 auto 32px; position: relative; z-index: 1; }
+
+.who-tags { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; position: relative; z-index: 1; }
+
+.who-tag { font-family: var(--font-head); font-size: 16px; font-weight: 400; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.9); border: 1px solid rgba(219,232,225,0.3); background: rgba(219,232,225,0.07); padding: 10px 18px; border-radius: 2px; min-height: 44px; display: flex; align-items: center; }
+
+@media (max-width: 860px) {
+  #hero { grid-template-columns: 1fr; }
+  .hero-geo-area { display: none; }
+  .hero-content-area { padding: 64px 24px; }
+  .stats-inner { grid-template-columns: 1fr; padding: 0 20px; }
+  .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); }
+  .stat-item:last-child { border-bottom: none; }
+  .problem-grid { grid-template-columns: 1fr; gap: 32px; }
+  .services-grid { grid-template-columns: 1fr; }
+  .services-header { flex-direction: column; align-items: flex-start; }
+  #services-preview::before { display: none; }
+}
