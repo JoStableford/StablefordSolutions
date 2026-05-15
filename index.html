@@ -9,12 +9,36 @@
 <style>
   /* ── HERO ── */
   #hero {
-    background: var(--dark);
-    padding: 100px 0 80px;
+    background: var(--navy);
+    padding: 88px 0 72px;
     position: relative;
     overflow: hidden;
   }
 
+  /* Node graphic — matches LinkedIn header aesthetic */
+  .hero-nodes {
+    position: absolute;
+    top: 0; right: 0;
+    width: 45%;
+    height: 100%;
+    opacity: 0.18;
+    pointer-events: none;
+  }
+
+  /* Sage triangle accent — mirrors header image */
+  .hero-triangle {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 200px 280px;
+    border-color: transparent transparent rgba(219,232,225,0.12) transparent;
+    pointer-events: none;
+  }
+
+  /* Red left-edge accent */
   #hero::before {
     content: '';
     position: absolute;
@@ -24,63 +48,57 @@
     background: var(--red);
   }
 
-  #hero::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23034687' fill-opacity='0.12'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    pointer-events: none;
-  }
-
   .hero-inner { position: relative; z-index: 1; }
 
   .hero-eyebrow {
     font-family: var(--font-head);
     font-size: 11px;
-    font-weight: 500;
+    font-weight: 400;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--red);
-    margin-bottom: 20px;
+    color: rgba(219,232,225,0.6);
+    margin-bottom: 18px;
   }
 
   #hero h1 {
     font-family: var(--font-head);
-    font-size: clamp(44px, 6.5vw, 80px);
-    font-weight: 700;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
+    font-size: clamp(36px, 5.5vw, 64px);
+    font-weight: 500;
+    letter-spacing: 0.01em;
     color: var(--white);
-    line-height: 1.0;
-    margin-bottom: 28px;
-    max-width: 720px;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    max-width: 680px;
   }
 
-  #hero h1 span { color: var(--sage); }
+  #hero h1 em {
+    font-style: normal;
+    color: var(--sage);
+  }
 
   .hero-sub {
     font-size: 17px;
     font-weight: 300;
-    color: rgba(219,232,225,0.72);
-    max-width: 500px;
-    line-height: 1.7;
-    margin-bottom: 44px;
+    color: rgba(219,232,225,0.7);
+    max-width: 480px;
+    line-height: 1.75;
+    margin-bottom: 40px;
   }
 
-  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+  .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
 
   .hero-bottom {
-    margin-top: 80px;
-    border-top: 1px solid rgba(255,255,255,0.08);
-    padding-top: 40px;
+    margin-top: 72px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 36px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 0;
   }
 
   .hero-stat {
-    padding: 0 32px;
-    border-right: 1px solid rgba(255,255,255,0.08);
+    padding: 0 28px;
+    border-right: 1px solid rgba(255,255,255,0.1);
   }
 
   .hero-stat:first-child { padding-left: 0; }
@@ -88,42 +106,41 @@
 
   .hero-stat-val {
     font-family: var(--font-head);
-    font-size: 36px;
-    font-weight: 700;
+    font-size: 28px;
+    font-weight: 500;
     color: var(--sage);
-    letter-spacing: 0.02em;
-    line-height: 1;
-    margin-bottom: 6px;
+    letter-spacing: 0.01em;
+    line-height: 1.1;
+    margin-bottom: 5px;
   }
 
   .hero-stat-label {
     font-size: 13px;
     font-weight: 300;
     color: rgba(255,255,255,0.45);
-    line-height: 1.4;
+    line-height: 1.45;
   }
 
   /* ── PROBLEM ── */
   #problem {
     background: var(--cream);
-    padding: 72px 0;
+    padding: 68px 0;
   }
 
   .problem-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 72px;
+    gap: 64px;
     align-items: center;
   }
 
   .problem-headline {
     font-family: var(--font-head);
-    font-size: clamp(28px, 3.5vw, 40px);
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
+    font-size: clamp(24px, 3vw, 34px);
+    font-weight: 500;
+    letter-spacing: 0.01em;
     color: var(--navy);
-    line-height: 1.1;
+    line-height: 1.2;
   }
 
   .problem-headline em {
@@ -134,7 +151,8 @@
   .problem-body p {
     font-size: 16px;
     color: var(--muted);
-    margin-bottom: 16px;
+    margin-bottom: 14px;
+    line-height: 1.75;
   }
 
   .problem-body p strong {
@@ -152,9 +170,9 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin-bottom: 48px;
+    margin-bottom: 40px;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 16px;
   }
 
   .services-grid {
@@ -166,7 +184,7 @@
 
   .svc-card {
     background: var(--white);
-    padding: 40px 36px;
+    padding: 36px 32px;
     border-top: 3px solid transparent;
     transition: border-color 0.2s, background 0.2s;
     text-decoration: none;
@@ -182,14 +200,16 @@
   .svc-num {
     font-family: var(--font-head);
     font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.18em;
+    font-weight: 400;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
     color: var(--red);
-    margin-bottom: 14px;
+    margin-bottom: 12px;
   }
 
   .svc-card h3 {
     font-size: 18px;
+    font-weight: 500;
     margin-bottom: 10px;
   }
 
@@ -202,12 +222,12 @@
   /* ── WHO ── */
   #who {
     background: var(--navy);
-    padding: 72px 0;
+    padding: 68px 0;
     text-align: center;
   }
 
-  #who h2 { color: var(--white); margin-bottom: 12px; }
-  #who .lead { color: rgba(219,232,225,0.7); margin: 0 auto 36px; text-align: center; }
+  #who h2 { color: var(--white); margin-bottom: 10px; }
+  #who .lead { color: rgba(219,232,225,0.65); margin: 0 auto 32px; text-align: center; }
 
   .who-tags {
     display: flex;
@@ -219,21 +239,22 @@
   .who-tag {
     font-family: var(--font-head);
     font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0.1em;
+    font-weight: 400;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--white);
-    border: 1px solid rgba(219,232,225,0.3);
-    padding: 9px 18px;
+    color: rgba(255,255,255,0.85);
+    border: 1px solid rgba(219,232,225,0.25);
+    padding: 8px 16px;
     border-radius: 2px;
   }
 
   @media (max-width: 768px) {
-    .problem-grid { grid-template-columns: 1fr; gap: 32px; }
+    .problem-grid { grid-template-columns: 1fr; gap: 28px; }
     .services-grid { grid-template-columns: 1fr; }
-    .hero-bottom { grid-template-columns: 1fr; gap: 24px; }
-    .hero-stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); padding: 0 0 24px; }
-    .hero-stat:last-child { border-bottom: none; }
+    .hero-bottom { grid-template-columns: 1fr; gap: 20px; }
+    .hero-stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); padding: 0 0 20px; }
+    .hero-stat:last-child { border-bottom: none; padding-bottom: 0; }
+    .hero-nodes { display: none; }
     .services-header { flex-direction: column; align-items: flex-start; }
   }
 </style>
@@ -254,9 +275,42 @@
 </nav>
 
 <section id="hero">
+  <!-- Node network graphic matching LinkedIn header aesthetic -->
+  <svg class="hero-nodes" viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+    <g stroke="white" stroke-width="0.8" fill="none">
+      <line x1="80" y1="60" x2="200" y2="130"/>
+      <line x1="200" y1="130" x2="310" y2="80"/>
+      <line x1="310" y1="80" x2="420" y2="150"/>
+      <line x1="200" y1="130" x2="260" y2="240"/>
+      <line x1="260" y1="240" x2="380" y2="280"/>
+      <line x1="380" y1="280" x2="420" y2="150"/>
+      <line x1="260" y1="240" x2="140" y2="290"/>
+      <line x1="140" y1="290" x2="80" y2="200"/>
+      <line x1="80" y1="200" x2="80" y2="60"/>
+      <line x1="310" y1="80" x2="380" y2="280"/>
+      <line x1="140" y1="290" x2="260" y2="360"/>
+      <line x1="260" y1="360" x2="380" y2="280"/>
+      <line x1="420" y1="150" x2="460" y2="300"/>
+      <line x1="460" y1="300" x2="380" y2="280"/>
+    </g>
+    <g fill="white">
+      <circle cx="80" cy="60" r="3"/>
+      <circle cx="200" cy="130" r="4"/>
+      <circle cx="310" cy="80" r="3"/>
+      <circle cx="420" cy="150" r="3.5"/>
+      <circle cx="260" cy="240" r="4.5"/>
+      <circle cx="380" cy="280" r="3"/>
+      <circle cx="140" cy="290" r="3"/>
+      <circle cx="80" cy="200" r="2.5"/>
+      <circle cx="260" cy="360" r="3"/>
+      <circle cx="460" cy="300" r="2.5"/>
+    </g>
+  </svg>
+  <div class="hero-triangle"></div>
+
   <div class="container hero-inner">
-    <div class="hero-eyebrow">Stableford Solutions</div>
-    <h1>Strategy without <span>systems</span> doesn't execute.</h1>
+    <div class="hero-eyebrow">Stableford Solutions · Operations Advisory</div>
+    <h1>Strategy without <em>systems</em> doesn't execute.</h1>
     <p class="hero-sub">
       I help founders, executive teams, and nonprofit boards build the operating infrastructure that turns strategic intent into clear expectations, visible progress, and real accountability.
     </p>
@@ -271,12 +325,12 @@
         <div class="hero-stat-label">ARR growth supported,<br>seed to scale</div>
       </div>
       <div class="hero-stat">
-        <div class="hero-stat-val">3 Models</div>
+        <div class="hero-stat-val">3 Engagement Models</div>
         <div class="hero-stat-label">Project, advisory,<br>or embedded/fractional</div>
       </div>
       <div class="hero-stat">
         <div class="hero-stat-val">For-profit + Nonprofit</div>
-        <div class="hero-stat-label">Direct experience across<br>both sectors</div>
+        <div class="hero-stat-label">Direct experience<br>across both sectors</div>
       </div>
     </div>
   </div>
@@ -303,7 +357,7 @@
     <div class="services-header">
       <div>
         <div class="section-label">What I Do</div>
-        <h2>Four Areas of Focus</h2>
+        <h2>Four areas of focus</h2>
       </div>
       <a href="services.html" class="btn btn-outline">All Services →</a>
     </div>
@@ -334,7 +388,7 @@
 
 <section id="who">
   <div class="container">
-    <div class="section-label" style="color: rgba(219,232,225,0.6);">Who I Work With</div>
+    <div class="section-label" style="color: rgba(219,232,225,0.55);">Who I Work With</div>
     <h2>Organizations navigating real complexity</h2>
     <p class="lead">From venture-backed startups to nonprofit boards — I work where operational clarity is the difference between growth and gridlock.</p>
     <div class="who-tags">
