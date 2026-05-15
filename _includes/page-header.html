@@ -1,0 +1,15 @@
+<div class="page-header">
+  <svg class="ph-geo" viewBox="0 0 1000 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" aria-hidden="true">
+    <polygon points="0,0 300,0 0,220" fill="white" opacity="0.05"/>
+    <polygon points="0,130 190,220 0,220" fill="#dbe8e1" opacity="0.1"/>
+  </svg>
+  <div class="container">
+    {% if include.label %}
+      <div class="page-header-label">{{ include.label }}</div>
+    {% endif %}
+    <h1>{{ include.title }}</h1>
+    {% if include.desc %}
+      <p>{{ include.desc }}</p>
+    {% endif %}
+  </div>
+</div>

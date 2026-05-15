@@ -1,0 +1,19 @@
+title: Stableford Solutions
+description: Business Strategy & Operations consulting for scaling businesses, nonprofits, and leadership teams.
+url: "https://stableford.solutions"
+baseurl: ""
+
+author:
+  name: Joanne Stableford
+  email: joanne@stableford.solutions
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+# Exclude from build output
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - .gitignore

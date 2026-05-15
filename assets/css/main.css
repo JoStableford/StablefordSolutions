@@ -1,32 +1,38 @@
-/* ── STABLEFORD SOLUTIONS — SHARED STYLES ── */
-/* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Oswald:wght@300;400;500;600&family=Roboto:wght@300;400;500&display=swap');
+/* ── STABLEFORD SOLUTIONS — MAIN STYLES ── */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Oswald:wght@400;500;600&family=Roboto:wght@400;500&display=swap');
 
-/* Local Font */
-@font-face {
-  font-family: 'Amsterdam Four';
-  src: url('assets/fonts/amsterdam-four.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
+/*
+  FONT NOTE: Great Vibes is the closest Google Fonts match to Amsterdam Four.
+  To use Amsterdam Four:
+    1. Purchase a commercial license and add AmsterdamFour.woff2 to assets/fonts/
+    2. Add this @font-face rule:
+
+  @font-face {
+    font-family: 'Amsterdam Four';
+    src: url('/assets/fonts/AmsterdamFour.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+    3. Update --font-script below to: 'Amsterdam Four', cursive
+*/
 
 :root {
-  --navy:      #034687;
-  --navy-dk:   #022d5c;
-  --navy-mid:  #023570;
-  --sage:      #dbe8e1;
-  --sage-dk:   #b8d4c8;
-  --cream:     #e5ddc8;
-  --dark:      #151b25;
-  --red:       #db1f48;
-  --white:     #ffffff;
-  --offwhite:  #f5f7fa;
-  --text:      #1c2333;
-  --muted:     #5a6478;
-  --border:    #dce3ec;
+  --navy:     #034687;
+  --navy-dk:  #022d5c;
+  --navy-mid: #023570;
+  --sage:     #dbe8e1;
+  --sage-dk:  #9dbece;
+  --cream:    #e5ddc8;
+  --red:      #db1f48;
+  --white:    #ffffff;
+  --offwhite: #f5f7fa;
+  --text:     #1c2333;
+  --muted:    #4a5468;
+  --border:   #dce3ec;
 
-  --font-script: 'Amsterdam Four', cursive;
+  --font-script: 'Great Vibes', cursive;
   --font-head:   'Oswald', sans-serif;
   --font-body:   'Roboto', sans-serif;
   --max-w: 1120px;
@@ -38,13 +44,37 @@ html { scroll-behavior: smooth; }
 
 body {
   font-family: var(--font-body);
-  font-weight: 300;
+  font-weight: 400;
   font-size: 16px;
   line-height: 1.75;
   color: var(--text);
   background: var(--white);
   -webkit-font-smoothing: antialiased;
 }
+
+/* ── FOCUS INDICATORS (WCAG 2.4.7, 2.4.13) ── */
+:focus-visible {
+  outline: 3px solid var(--sage-dk);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ── SKIP LINK (WCAG 2.4.1) ── */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 16px;
+  background: var(--navy);
+  color: var(--white);
+  padding: 10px 18px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 0 0 4px 4px;
+  text-decoration: none;
+  z-index: 9999;
+  transition: top 0.2s;
+}
+.skip-link:focus { top: 0; }
 
 /* ── NAV ── */
 nav {
@@ -134,7 +164,6 @@ nav {
   overflow: hidden;
 }
 
-/* White geometric triangle accent — top left, echoing LinkedIn header */
 .page-header .ph-geo {
   position: absolute;
   top: 0; left: 0;
@@ -142,7 +171,6 @@ nav {
   pointer-events: none;
 }
 
-/* Diagonal bottom edge — creates the angular cut */
 .page-header::after {
   content: '';
   position: absolute;
@@ -163,19 +191,18 @@ nav {
 .page-header-label {
   font-family: var(--font-head);
   font-size: 16px;
-  font-weight: 500;
-  letter-spacing: 0.15em;
+  font-weight: 400;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--sage);
-  opacity: 0.9;
   margin-bottom: 10px;
 }
 
 .page-header h1 {
   font-family: var(--font-head);
-  font-size: clamp(30px, 4vw, 46px);
+  font-size: clamp(32px, 4vw, 48px);
   font-weight: 500;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.01em;
   color: var(--white);
   line-height: 1.1;
   max-width: 640px;
@@ -184,8 +211,8 @@ nav {
 .page-header p {
   margin-top: 14px;
   font-size: 16px;
-  font-weight: 500;
-  color: rgba(219,232,225,0.68);
+  font-weight: 400;
+  color: #c8dbd4;
   max-width: 520px;
   line-height: 1.7;
 }
@@ -193,16 +220,15 @@ nav {
 /* ── UTILITY ── */
 .container { max-width: var(--max-w); margin: 0 auto; padding: 0 40px; }
 .section { padding: 80px 0; }
-.section-sm { padding: 56px 0; }
 
 .section-label {
   font-family: var(--font-head);
   font-size: 16px;
   font-weight: 400;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--navy);
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -214,16 +240,16 @@ nav {
   width: 20px; height: 2px;
   background: currentColor;
   flex-shrink: 0;
-  opacity: 0.6;
+  opacity: 0.5;
 }
 
-.section-label.light { color: rgba(219,232,225,0.7); }
+.section-label.light { color: var(--sage); }
 
 h2 {
   font-family: var(--font-head);
-  font-size: clamp(26px, 3.5vw, 36px);
+  font-size: clamp(28px, 3.5vw, 38px);
   font-weight: 500;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.01em;
   color: var(--navy);
   line-height: 1.15;
   margin-bottom: 16px;
@@ -231,17 +257,17 @@ h2 {
 
 h3 {
   font-family: var(--font-head);
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 500;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.01em;
   color: var(--navy);
   line-height: 1.25;
   margin-bottom: 10px;
 }
 
 .lead {
-  font-size: 17px;
-  font-weight: 500;
+  font-size: 18px;
+  font-weight: 400;
   color: var(--muted);
   line-height: 1.75;
   max-width: 580px;
@@ -252,14 +278,17 @@ h3 {
 
 /* ── BUTTONS ── */
 .btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-family: var(--font-head);
   font-size: 16px;
   font-weight: 500;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   text-decoration: none;
-  padding: 13px 30px;
+  padding: 13px 28px;
+  min-height: 44px;
   border-radius: 2px;
   transition: all 0.18s;
   cursor: pointer;
@@ -275,8 +304,8 @@ h3 {
 .btn-outline { background: transparent; color: var(--navy); border-color: var(--navy); }
 .btn-outline:hover { background: var(--navy); color: var(--white); }
 
-.btn-outline-sage { background: transparent; color: var(--white); border-color: rgba(219,232,225,0.45); }
-.btn-outline-sage:hover { border-color: var(--sage); background: rgba(219,232,225,0.1); }
+.btn-outline-sage { background: transparent; color: var(--white); border-color: rgba(219,232,225,0.6); }
+.btn-outline-sage:hover { border-color: var(--sage); background: rgba(219,232,225,0.12); }
 
 /* ── CTA BANNER ── */
 .cta-banner {
@@ -299,7 +328,7 @@ h3 {
 }
 
 .cta-banner h2 { color: var(--white); margin-bottom: 10px; }
-.cta-banner p { color: rgba(219,232,225,0.65); max-width: 440px; margin: 0 auto 28px; font-size: 16px; }
+.cta-banner p { font-size: 16px; font-weight: 400; color: #c8dbd4; max-width: 460px; margin: 0 auto 28px; }
 
 /* ── FOOTER ── */
 footer { background: var(--navy-dk); padding: 36px 0; }
@@ -315,11 +344,48 @@ footer { background: var(--navy-dk); padding: 36px 0; }
   gap: 14px;
 }
 
-.footer-brand { font-family: var(--font-script); font-size: 20px; font-weight: 300; color: rgba(255,255,255,0.35); }
-.footer-right { display: flex; align-items: center; gap: 24px; }
-.footer-link { font-family: var(--font-head); font-size: 16px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(219,232,225,0.3); text-decoration: none; transition: color 0.6s; }
-.footer-link:hover { color: rgba(219,232,225,0.7); }
-.footer-copy { font-size: 16px; color: rgba(255,255,255,0.18); }
+.footer-brand { line-height: 1; }
+
+.footer-brand-script {
+  font-family: var(--font-script);
+  font-size: 22px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.5);
+  display: block;
+  line-height: 1.8;
+}
+
+.footer-brand-sub {
+  font-family: var(--font-head);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(219,232,225,0.45);
+  display: block;
+  margin-left: 24px;
+  line-height: 1;
+}
+
+.footer-right { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+
+.footer-link {
+  font-family: var(--font-head);
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s;
+}
+
+.footer-link:hover { color: var(--white); }
+
+.footer-copy { font-size: 16px; font-weight: 400; color: rgba(255,255,255,0.45); }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 860px) {
@@ -327,5 +393,6 @@ footer { background: var(--navy-dk); padding: 36px 0; }
   .container, .nav-inner, .footer-inner { padding-left: 20px; padding-right: 20px; }
   .section { padding: 52px 0; }
   .footer-inner { flex-direction: column; text-align: center; }
+  .footer-brand-sub { margin-left: 0; }
   .page-header { padding-bottom: 80px; }
 }

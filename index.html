@@ -1,351 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Stableford Solutions — Business Strategy & Operations</title>
-<meta name="description" content="Joanne Stableford helps growing organizations build the internal systems and operational infrastructure to match where they're headed.">
-<link rel="stylesheet" href="shared.css">
-<style>
+---
+layout: default
+title: Business Strategy & Operations
+description: Joanne Stableford helps growing organizations build the internal systems and operational infrastructure to match where they're headed.
+page_css: index
+---
 
-  /* ══════════════════════════════════════════
-     HERO — Split composition matching LinkedIn header:
-     Left: white + sage triangles with node network
-     Right: navy gradient with content
-  ══════════════════════════════════════════ */
-  #hero {
-    background: var(--hero-gradient);
-    min-height: 520px;
-    display: grid;
-    grid-template-columns: 38% 1fr;
-    position: relative;
-    overflow: hidden;
-  }
-
-  /* Left geometric area — white background */
-  .hero-geo-area {
-    position: relative;
-    background: var(--white);
-    overflow: hidden;
-  }
-
-  /* The diagonal cut that separates geo area from navy — matches LinkedIn header angle */
-  .hero-geo-area::after {
-    content: '';
-    position: absolute;
-    top: 0; right: -1px;
-    width: 80px; height: 100%;
-    background: var(--hero-gradient);
-    clip-path: polygon(100% 0, 100% 100%, 0 100%);
-  }
-
-  /* Node network SVG — sits on the white area like the LinkedIn header */
-  .hero-nodes-svg {
-    position: absolute;
-    top: 0; left: 0;
-    width: 90%; height: 85%;
-    opacity: 1;
-  }
-
-  /* Sage triangle — the mint accent block, same composition as the header */
-  .hero-sage-tri {
-    position: absolute;
-    bottom: 0; left: 0;
-    right: 0;
-  }
-
-  /* Right content area */
-  .hero-content-area {
-    padding: 72px 48px 60px 52px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
-    z-index: 1;
-  }
-
-  .hero-eyebrow {
-    font-family: var(--font-head);
-    font-size: 11px;
-    font-weight: 400;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--sage);
-    opacity: 0.75;
-    margin-bottom: 20px;
-  }
-
-  /* Script name — the centerpiece, mirrors how "Joanne Stableford" sits in the header */
-  .hero-script-name {
-    font-family: var(--font-script);
-    font-size: clamp(42px, 5vw, 64px);
-    font-weight: 300;
-    color: var(--white);
-    line-height: 1.5;
-    margin-bottom: 6px;
-    letter-spacing: 0.01em;
-  }
-
-  /* Tagline — clean Oswald, wide-spaced caps — mirrors "OPERATIONS LEADER" in header */
-  .hero-tagline {
-    font-family: var(--font-head);
-    font-size: clamp(13px, 1.5vw, 16px);
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--sage);
-    margin-bottom: 32px;
-    opacity: 0.9;
-  }
-
-  .hero-body {
-    font-size: 16px;
-    font-weight: 300;
-    color: rgba(219,232,225,0.72);
-    line-height: 1.75;
-    max-width: 440px;
-    margin-bottom: 36px;
-  }
-
-  .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
-
-  /* Stats strip — full width below hero */
-  #hero-stats {
-    background: var(--navy-dk);
-    border-top: 1px solid rgba(255,255,255,0.08);
-  }
-
-  .stats-inner {
-    max-width: var(--max-w);
-    margin: 0 auto;
-    padding: 0 40px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .stat-item {
-    padding: 28px 32px;
-    border-right: 1px solid rgba(255,255,255,0.07);
-    display: flex;
-    align-items: center;
-    gap: 18px;
-  }
-
-  .stat-item:last-child { border-right: none; }
-
-  .stat-val {
-    font-family: var(--font-head);
-    font-size: 22px;
-    font-weight: 500;
-    color: var(--sage);
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
-
-  .stat-label {
-    font-size: 13px;
-    font-weight: 300;
-    color: rgba(255,255,255,0.4);
-    line-height: 1.45;
-  }
-
-  /* ══ PROBLEM ══ */
-  #problem {
-    background: var(--white);
-    padding: 88px 0 72px; /* extra top padding for the diagonal page-header cut */
-  }
-
-  .problem-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 72px;
-    align-items: center;
-  }
-
-  /* Sage geometric accent block — decorative triangle echoing header */
-  .problem-geo {
-    position: relative;
-  }
-
-  .problem-geo::before {
-    content: '';
-    position: absolute;
-    top: -24px; left: -24px;
-    width: 80px; height: 80px;
-    background: var(--sage);
-    clip-path: polygon(0 0, 100% 0, 0 100%);
-    opacity: 0.6;
-  }
-
-  .problem-headline {
-    font-family: var(--font-head);
-    font-size: clamp(22px, 2.8vw, 32px);
-    font-weight: 500;
-    color: var(--navy);
-    line-height: 1.25;
-    position: relative;
-  }
-
-  .problem-headline em { font-style: normal; color: var(--red); }
-
-  .problem-body p { font-size: 16px; color: var(--muted); margin-bottom: 14px; line-height: 1.78; }
-  .problem-body p strong { color: var(--text); font-weight: 500; }
-
-  /* ══ SERVICES PREVIEW ══ */
-  #services-preview {
-    background: var(--offwhite);
-    padding: 80px 0;
-    position: relative;
-  }
-
-  /* Triangular top edge */
-  #services-preview::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 44px;
-    background: var(--white);
-    clip-path: polygon(0 0, 0 100%, 100% 0);
-  }
-
-  .services-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-bottom: 40px;
-    flex-wrap: wrap;
-    gap: 16px;
-  }
-
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2px;
-    background: var(--border);
-  }
-
-  .svc-card {
-    background: var(--white);
-    padding: 36px 32px;
-    border-left: 4px solid transparent;
-    transition: border-color 0.2s, background 0.2s;
-    text-decoration: none;
-    display: block;
-    color: inherit;
-  }
-
-  .svc-card:hover { border-left-color: var(--navy); background: var(--sage); }
-
-  .svc-num {
-    font-family: var(--font-head);
-    font-size: 11px;
-    font-weight: 400;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--navy);
-    opacity: 0.5;
-    margin-bottom: 12px;
-  }
-
-  .svc-card h3 { font-size: 18px; font-weight: 500; margin-bottom: 10px; }
-  .svc-card p { font-size: 14px; color: var(--muted); line-height: 1.65; }
-
-  /* ══ WHO ══ */
-  #who {
-    background: var(--hero-gradient);
-    padding: 80px 0;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-
-  /* Geometric triangle — bottom right, mirrors header */
-  #who::after {
-    content: '';
-    position: absolute;
-    bottom: 0; right: 0;
-    width: 0; height: 0;
-    border-style: solid;
-    border-width: 0 0 200px 300px;
-    border-color: transparent transparent rgba(219,232,225,0.1) transparent;
-  }
-
-  /* White triangle top-left */
-  #who::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 0; height: 0;
-    border-style: solid;
-    border-width: 120px 160px 0 0;
-    border-color: rgba(255,255,255,0.04) transparent transparent transparent;
-  }
-
-  #who h2 { color: var(--white); margin-bottom: 10px; position: relative; z-index: 1; }
-  #who .lead { color: rgba(219,232,225,0.65); margin: 0 auto 32px; position: relative; z-index: 1; }
-
-  .who-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-    position: relative;
-    z-index: 1;
-  }
-
-  .who-tag {
-    font-family: var(--font-head);
-    font-size: 12px;
-    font-weight: 400;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.85);
-    border: 1px solid rgba(219,232,225,0.25);
-    background: rgba(219,232,225,0.06);
-    padding: 9px 18px;
-    border-radius: 2px;
-  }
-
-  /* ══ RESPONSIVE ══ */
-  @media (max-width: 860px) {
-    #hero { grid-template-columns: 1fr; }
-    .hero-geo-area { display: none; }
-    .hero-content-area { padding: 64px 24px; }
-    .stats-inner { grid-template-columns: 1fr; }
-    .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); }
-    .stat-item:last-child { border-bottom: none; }
-    .problem-grid { grid-template-columns: 1fr; gap: 32px; }
-    .services-grid { grid-template-columns: 1fr; }
-    .services-header { flex-direction: column; align-items: flex-start; }
-    #services-preview::before { display: none; }
-  }
-</style>
-</head>
-<body>
-
-<nav>
-  <div class="nav-inner">
-    <a href="index.html" class="nav-brand">
-      <span class="nav-brand-script">Stableford</span>
-      <span class="nav-brand-sub">       Solutions</span>
-    </a>
-    <ul class="nav-links">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="work.html">Work</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </div>
-</nav>
-
-<!-- ══ HERO ══ -->
-<section id="hero">
-
-  <!-- LEFT: Geometric composition (white area + triangles + node network) -->
-  <div class="hero-geo-area">
-
-    <!-- Node network — on white background, subtle sage lines (matches LinkedIn header) -->
+<section id="hero" aria-label="Introduction">
+  <div class="hero-geo-area" aria-hidden="true">
     <svg class="hero-nodes-svg" viewBox="0 0 320 440" xmlns="http://www.w3.org/2000/svg">
       <g stroke="#b8d4c8" stroke-width="1" fill="none" opacity="0.7">
         <line x1="40" y1="30" x2="140" y2="90"/>
@@ -363,50 +24,36 @@
         <line x1="40" y1="340" x2="120" y2="320"/>
       </g>
       <g fill="#b8d4c8" opacity="0.8">
-        <circle cx="40" cy="30" r="3.5"/>
-        <circle cx="140" cy="90" r="5"/>
-        <circle cx="220" cy="50" r="3.5"/>
-        <circle cx="290" cy="130" r="4"/>
-        <circle cx="160" cy="190" r="5.5"/>
-        <circle cx="260" cy="220" r="3.5"/>
-        <circle cx="80" cy="240" r="3.5"/>
-        <circle cx="40" cy="160" r="3"/>
-        <circle cx="120" cy="320" r="4"/>
-        <circle cx="220" cy="300" r="3.5"/>
+        <circle cx="40" cy="30" r="3.5"/><circle cx="140" cy="90" r="5"/>
+        <circle cx="220" cy="50" r="3.5"/><circle cx="290" cy="130" r="4"/>
+        <circle cx="160" cy="190" r="5.5"/><circle cx="260" cy="220" r="3.5"/>
+        <circle cx="80" cy="240" r="3.5"/><circle cx="40" cy="160" r="3"/>
+        <circle cx="120" cy="320" r="4"/><circle cx="220" cy="300" r="3.5"/>
         <circle cx="40" cy="340" r="3"/>
       </g>
     </svg>
-
-    <!-- Sage triangle — the mint accent block, lower portion of geo area -->
     <svg class="hero-sage-tri" viewBox="0 0 380 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
       <polygon points="0,200 380,200 0,30" fill="#dbe8e1" opacity="0.92"/>
     </svg>
-
   </div>
 
-  <!-- RIGHT: Navy content area -->
   <div class="hero-content-area">
-    <div class="hero-eyebrow">Business Strategy & Operations Consulting</div>
-
-    <!-- Script name — the brand centerpiece matching LinkedIn header -->
+    <span class="hero-eyebrow">Business Strategy &amp; Operations Consulting</span>
     <div class="hero-script-name">Stableford Solutions</div>
-    <div class="hero-tagline">Building infrastructure for organizations that have outgrown their systems</div>
-
+    <span class="hero-tagline">Building infrastructure for organizations that have outgrown their systems</span>
     <p class="hero-body">I work with scaling businesses, nonprofits, and leadership teams to build the operational foundation — processes, people systems, governance, and strategy — that matches where they're headed.</p>
-
     <div class="hero-actions">
-      <a href="contact.html" class="btn btn-primary-light">Start a Conversation</a>
-      <a href="services.html" class="btn btn-outline-sage">What I Do</a>
+      <a href="/contact/" class="btn btn-primary-light">Start a Conversation</a>
+      <a href="/services/" class="btn btn-outline-sage">What I Do</a>
     </div>
   </div>
 </section>
 
-<!-- Stats strip -->
-<div id="hero-stats">
+<div id="hero-stats" role="region" aria-label="Key facts">
   <div class="stats-inner">
     <div class="stat-item">
       <div class="stat-val">10+ Years</div>
-      <div class="stat-label">Senior ops leadership across tech, government & mission-driven organizations</div>
+      <div class="stat-label">Senior ops leadership across tech, government &amp; mission-driven organizations</div>
     </div>
     <div class="stat-item">
       <div class="stat-val">$600K → $6.5M</div>
@@ -419,72 +66,69 @@
   </div>
 </div>
 
-<!-- Problem -->
-<section id="problem">
+<section id="problem" aria-labelledby="problem-heading">
   <div class="container">
     <div class="problem-grid">
       <div class="problem-geo">
-        <div class="problem-headline">
+        <h2 id="problem-heading" class="problem-headline">
           Growth is the goal. But growth without <em>systems</em> creates its own problems.
-        </div>
+        </h2>
       </div>
       <div class="problem-body">
         <p>When an organization outpaces its internal infrastructure, the symptoms show up everywhere: inconsistent processes, unclear accountability, people systems that weren't built for this stage, technology that doesn't connect, and leadership making decisions without the visibility they need.</p>
         <p><strong>That's the problem I solve.</strong> I build the operating foundation that lets organizations grow with clarity — and I build it so your team can own and run it without me.</p>
-        <a href="services.html" class="btn btn-outline" style="margin-top:8px;">See How →</a>
+        <a href="/services/" class="btn btn-outline" style="margin-top:12px;">See How →</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Services preview -->
-<section id="services-preview">
+<section id="services-preview" aria-labelledby="services-heading">
   <div class="container">
     <div class="services-header">
       <div>
-        <div class="section-label">What I Do</div>
-        <h2>Four areas of focus</h2>
+        <div class="section-label" aria-hidden="true">What I Do</div>
+        <h2 id="services-heading">Four areas of focus</h2>
       </div>
-      <a href="services.html" class="btn btn-outline">Full Services →</a>
+      <a href="/services/" class="btn btn-outline">Full Services →</a>
     </div>
-    <div class="services-grid">
-      <a href="services.html#biz-ops" class="svc-card">
-        <div class="svc-num">01</div>
-        <h3>Business Operations & Systems</h3>
+    <div class="services-grid" role="list">
+      <a href="/services/#biz-ops" class="svc-card" role="listitem">
+        <div class="svc-num" aria-hidden="true">01</div>
+        <h3>Business Operations &amp; Systems</h3>
         <p>Processes, infrastructure, compliance, business enablement systems, and technology implementation — the operational backbone that makes everything else work.</p>
       </a>
-      <a href="services.html#hr-people" class="svc-card">
-        <div class="svc-num">02</div>
-        <h3>HR & People Operations</h3>
+      <a href="/services/#hr-people" class="svc-card" role="listitem">
+        <div class="svc-num" aria-hidden="true">02</div>
+        <h3>HR &amp; People Operations</h3>
         <p>Hiring structures, onboarding, benefits, equity, policy, and the people infrastructure that scaling organizations need but rarely have built properly.</p>
       </a>
-      <a href="services.html#governance" class="svc-card">
-        <div class="svc-num">03</div>
-        <h3>Governance & Performance Management</h3>
+      <a href="/services/#governance" class="svc-card" role="listitem">
+        <div class="svc-num" aria-hidden="true">03</div>
+        <h3>Governance &amp; Performance Management</h3>
         <p>Executive accountability, board oversight, performance review processes, and documentation that makes leadership decisions defensible and consistent.</p>
       </a>
-      <a href="services.html#strategy" class="svc-card">
-        <div class="svc-num">04</div>
-        <h3>Strategy & Organizational Design</h3>
+      <a href="/services/#strategy" class="svc-card" role="listitem">
+        <div class="svc-num" aria-hidden="true">04</div>
+        <h3>Strategy &amp; Organizational Design</h3>
         <p>Operating cadence, goal alignment, org structure, and the strategic layer that ties everything together across a growing leadership team.</p>
       </a>
     </div>
   </div>
 </section>
 
-<!-- Who -->
-<section id="who">
+<section id="who" aria-labelledby="who-heading">
   <div class="container">
-    <div class="section-label light">Who I Work With</div>
-    <h2>Organizations at an inflection point</h2>
+    <div class="section-label light" aria-hidden="true">Who I Work With</div>
+    <h2 id="who-heading">Organizations at an inflection point</h2>
     <p class="lead">Whether you're a founder who's been doing everything yourself, a nonprofit board that's outgrown its structure, or a leadership team scaling faster than its systems — the problem looks the same from where I sit.</p>
-    <div class="who-tags">
-      <div class="who-tag">Scaling Small & Mid-Size Businesses</div>
-      <div class="who-tag">Nonprofit & Associations</div>
-      <div class="who-tag">Founder-Led Teams</div>
-      <div class="who-tag">Seed to Series B</div>
-      <div class="who-tag">Government Contracting & Compliance</div>
-      <div class="who-tag">Boards & Executive Teams</div>
+    <div class="who-tags" role="list">
+      <div class="who-tag" role="listitem">Scaling Small &amp; Mid-Size Businesses</div>
+      <div class="who-tag" role="listitem">Nonprofit &amp; Associations</div>
+      <div class="who-tag" role="listitem">Founder-Led Teams</div>
+      <div class="who-tag" role="listitem">Seed to Series B</div>
+      <div class="who-tag" role="listitem">Government Contracting &amp; Compliance</div>
+      <div class="who-tag" role="listitem">Boards &amp; Executive Teams</div>
     </div>
   </div>
 </section>
@@ -493,19 +137,6 @@
   <div class="container">
     <h2>Not sure where to start?</h2>
     <p>Most engagements begin with a short conversation about what's working, what isn't, and where the gaps are.</p>
-    <a href="contact.html" class="btn btn-primary-light">Let's Talk</a>
+    <a href="/contact/" class="btn btn-primary-light">Let's Talk</a>
   </div>
 </div>
-
-<footer>
-  <div class="footer-inner">
-    <div class="footer-brand">Stableford Solutions</div>
-    <div class="footer-right">
-      <a href="https://www.linkedin.com/in/joanne-stableford" target="_blank" rel="noopener" class="footer-link">LinkedIn</a>
-      <span class="footer-copy">© 2026 · Anne Arundel County, Maryland</span>
-    </div>
-  </div>
-</footer>
-
-</body>
-</html>
