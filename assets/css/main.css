@@ -1,5 +1,6 @@
 /* ── STABLEFORD SOLUTIONS — MAIN STYLES ── */
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Roboto:wght@400;500&display=swap');
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Oswald:wght@300;400;500;600&family=Roboto:wght@300;400;500&display=swap');
 
 /* Local Font */
 @font-face {
