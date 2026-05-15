@@ -1,0 +1,20 @@
+<nav aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="{{ '/' | relative_url }}" class="nav-brand" aria-label="Stableford Solutions home">
+      <span class="nav-brand-script">Stableford</span>
+      <span class="nav-brand-sub">Solutions</span>
+    </a>
+    <ul class="nav-links">
+      {% for item in site.data.navigation %}
+      <li>
+        <a href="{{ item.url | relative_url }}"
+          {% if page.url == item.url or page.url == item.url | append: 'index.html' %}
+            class="active" aria-current="page"
+          {% endif %}>
+          {{ item.label }}
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</nav>
