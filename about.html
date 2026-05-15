@@ -15,7 +15,7 @@
   .about-grid {
     display: grid;
     grid-template-columns: 280px 1fr;
-    gap: 80px;
+    gap: 72px;
     align-items: start;
   }
 
@@ -25,75 +25,100 @@
     top: 88px;
   }
 
+  /* Headshot */
+  .headshot-wrap {
+    width: 100%;
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: 3px;
+    margin-bottom: 24px;
+    background: var(--sage);
+    border: 3px solid var(--navy);
+  }
+
+  .headshot-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+  }
+
   .sidebar-name {
     font-family: var(--font-head);
-    font-size: 32px;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
+    font-size: 26px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
     color: var(--navy);
-    line-height: 1.05;
-    margin-bottom: 6px;
+    line-height: 1.1;
+    margin-bottom: 4px;
   }
 
   .sidebar-title {
     font-family: var(--font-head);
-    font-size: 12px;
-    font-weight: 500;
+    font-size: 11px;
+    font-weight: 400;
     letter-spacing: 0.16em;
     text-transform: uppercase;
     color: var(--red);
-    margin-bottom: 24px;
+    margin-bottom: 20px;
   }
 
-  .rule { margin-bottom: 24px; }
+  .rule { margin-bottom: 20px; }
 
   .sidebar-bio-short {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 300;
     color: var(--muted);
     line-height: 1.65;
-    margin-bottom: 28px;
+    margin-bottom: 24px;
   }
 
   .sidebar-link {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 9px;
     font-family: var(--font-head);
     font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0.1em;
+    font-weight: 400;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--navy);
     text-decoration: none;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     transition: color 0.2s;
   }
 
   .sidebar-link:hover { color: var(--red); }
 
   .sidebar-link svg {
-    width: 16px;
-    height: 16px;
+    width: 15px;
+    height: 15px;
     fill: currentColor;
     flex-shrink: 0;
   }
 
   /* Main content */
   .about-content h3 {
-    font-size: 20px;
-    margin-bottom: 14px;
-    margin-top: 44px;
+    font-size: 19px;
+    font-weight: 500;
+    margin-bottom: 12px;
+    margin-top: 40px;
+    padding-top: 40px;
+    border-top: 1px solid var(--border);
   }
 
-  .about-content h3:first-child { margin-top: 0; }
+  .about-content h3:first-child {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+  }
 
   .about-content p {
-    font-size: 16px;
+    font-size: 15px;
     color: var(--muted);
     line-height: 1.8;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
   }
 
   .about-content p strong {
@@ -105,22 +130,22 @@
   .board-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-    margin-top: 20px;
+    gap: 14px;
+    margin-top: 18px;
+    margin-bottom: 18px;
   }
 
   .board-card {
     background: var(--sage);
-    padding: 20px 24px;
+    padding: 18px 20px;
     border-left: 3px solid var(--navy);
   }
 
   .board-role {
     font-family: var(--font-head);
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
     color: var(--navy);
     margin-bottom: 4px;
   }
@@ -130,6 +155,24 @@
     font-weight: 300;
     color: var(--muted);
     line-height: 1.4;
+  }
+
+  /* Affiliations */
+  .affiliations {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+  }
+
+  .affil-tag {
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--navy);
+    border: 1px solid var(--border);
+    background: var(--offwhite);
+    padding: 5px 12px;
+    border-radius: 2px;
   }
 
   /* ── PRINCIPLES ── */
@@ -142,13 +185,13 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2px;
-    background: var(--cream-dark, #d8cfb5);
-    margin-top: 48px;
+    background: rgba(0,0,0,0.06);
+    margin-top: 40px;
   }
 
   .principle-card {
     background: var(--cream);
-    padding: 36px 32px;
+    padding: 32px 28px;
     border-top: 3px solid transparent;
     transition: border-color 0.2s, background 0.2s;
   }
@@ -160,21 +203,31 @@
 
   .principle-card h3 {
     font-size: 17px;
+    font-weight: 500;
     color: var(--navy);
     margin-bottom: 8px;
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
   }
 
   .principle-card p {
     font-size: 14px;
     color: var(--muted);
     line-height: 1.65;
+    margin: 0;
   }
 
   @media (max-width: 768px) {
-    .about-grid { grid-template-columns: 1fr; gap: 40px; }
-    .about-sidebar { position: static; }
+    .about-grid { grid-template-columns: 1fr; gap: 36px; }
+    .about-sidebar { position: static; display: grid; grid-template-columns: 160px 1fr; gap: 24px; align-items: start; }
+    .headshot-wrap { margin-bottom: 0; }
     .board-grid { grid-template-columns: 1fr; }
     .principles-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 500px) {
+    .about-sidebar { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -196,8 +249,8 @@
 <div class="page-header">
   <div class="container">
     <div class="page-header-label">Who I Am</div>
-    <h1>About</h1>
-    <p>Senior operational leadership experience across technology, consulting, and mission-driven organizations.</p>
+    <h1>About Joanne Stableford</h1>
+    <p>Operations strategist and governance advisor with senior leadership experience across technology, consulting, and mission-driven organizations.</p>
   </div>
 </div>
 
@@ -206,10 +259,13 @@
     <div class="about-grid">
 
       <div class="about-sidebar">
-        <div class="sidebar-name">Joanne<br>Stableford</div>
+        <div class="headshot-wrap">
+          <img src="assets/photos/jostableford-photo.png" alt="Joanne Stableford">
+        </div>
+        <div class="sidebar-name">Joanne Stableford</div>
         <div class="sidebar-title">Principal &amp; Founder</div>
         <span class="rule"></span>
-        <p class="sidebar-bio-short">Operations strategist and governance advisor working with founders, executive teams, and nonprofit boards.</p>
+        <p class="sidebar-bio-short">Operations strategist and governance advisor working with founders, executive teams, and nonprofit boards to build systems that make accountability real.</p>
         <a href="https://www.linkedin.com/in/joanne-stableford" target="_blank" rel="noopener" class="sidebar-link">
           <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14m-.5 15.5v-5.3a3.26 3.26 0 00-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 011.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 001.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 00-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
           LinkedIn
@@ -223,12 +279,12 @@
       <div class="about-content">
 
         <h3>Background</h3>
-        <p>I've held senior operational leadership roles across technology companies, consulting organizations, and mission-driven institutions — working closely with founders and executive teams to build the systems that support growth, distributed teams, and complex stakeholder environments.</p>
-        <p>That work has consistently centered on a single problem: the gap between what leadership intends and what the organization actually does. The tools for closing that gap — clear expectations, visible milestones, documented accountability, structured governance — are what I build.</p>
-        <p><strong>Performance management, to me, is not an HR process. It's a governance tool.</strong> The goal is not better annual reviews. It's systems that make accountability consistent, defensible, and durable regardless of who's in the room.</p>
+        <p>I've held senior operational leadership roles across technology companies, consulting organizations, and mission-driven institutions — working closely with founders and executive teams to build the systems that support organizational growth, distributed teams, and complex stakeholder environments.</p>
+        <p>That work has consistently centered on one problem: the gap between what leadership intends and what the organization actually does. The tools for closing that gap — clear expectations, visible milestones, documented accountability, structured governance — are what I design and build.</p>
+        <p><strong>Performance management, to me, is not an HR process. It's a governance tool.</strong> The goal isn't better annual reviews. It's systems that make accountability consistent, defensible, and durable — regardless of who's in the room.</p>
 
         <h3>Nonprofit &amp; Governance Experience</h3>
-        <p>In addition to my advisory work, I'm actively involved in volunteer nonprofit governance — which gives me direct, current familiarity with the financial, structural, and political constraints that mission-driven organizations navigate.</p>
+        <p>In addition to my advisory work, I'm actively involved in volunteer nonprofit governance, which gives me direct, current familiarity with the financial, structural, and political constraints that mission-driven organizations navigate. This isn't theory — it's the work I do alongside the advisory work.</p>
 
         <div class="board-grid">
           <div class="board-card">
@@ -241,10 +297,20 @@
           </div>
         </div>
 
-        <p style="margin-top: 20px;">These roles involve financial oversight, policy development, governance structure, grant management and compliance, cross-organization coordination with county partners, and financial standardization across member organizations.</p>
+        <p>These roles involve financial oversight, policy development, governance structure, grant management and compliance, cross-organization coordination with county partners, and financial standardization across member organizations.</p>
+
+        <h3>Professional Affiliations</h3>
+        <p>Joanne is affiliated with several regional professional and civic organizations:</p>
+        <div class="affiliations">
+          <span class="affil-tag">Pasadena Business Association</span>
+          <span class="affil-tag">100 Club of Anne Arundel County</span>
+          <span class="affil-tag">American Society of Association Executives</span>
+          <span class="affil-tag">Operators Guild</span>
+        </div>
 
         <h3>How I Work</h3>
-        <p>Every engagement is built to outlast my involvement. I'm not building dependency — I'm building capability. That means clear documentation, shared ownership, and systems your team can run, adapt, and trust.</p>
+        <p>Every engagement is built to outlast my involvement. I'm not building dependency — I'm building capability. That means clear documentation, shared ownership, and systems your team can run, adapt, and trust on their own.</p>
+        <p>I bring the same rigor I'd apply in a for-profit growth environment to nonprofit and association work — while recognizing the distinct governance structures, volunteer leadership dynamics, and resource constraints that shape those organizations.</p>
 
       </div>
     </div>
@@ -254,7 +320,7 @@
 <section id="principles">
   <div class="container">
     <div class="section-label">How I Think</div>
-    <h2>Operating Principles</h2>
+    <h2>Operating principles</h2>
     <div class="principles-grid">
       <div class="principle-card">
         <h3>Clarity before evaluation</h3>
@@ -262,7 +328,7 @@
       </div>
       <div class="principle-card">
         <h3>Documentation before consequence</h3>
-        <p>Accountability requires shared understanding on record. If it wasn't written down, it didn't happen.</p>
+        <p>Accountability requires shared understanding on record. If it wasn't written down, it didn't happen in any meaningful governance sense.</p>
       </div>
       <div class="principle-card">
         <h3>Milestones before judgment</h3>
