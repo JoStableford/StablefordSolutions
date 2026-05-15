@@ -4,117 +4,177 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Stableford Solutions — Business Strategy & Operations</title>
-<meta name="description" content="Joanne Stableford helps growing organizations build the internal systems, processes, and operational infrastructure to match where they're headed.">
+<meta name="description" content="Joanne Stableford helps growing organizations build the internal systems and operational infrastructure to match where they're headed.">
 <link rel="stylesheet" href="shared.css">
 <style>
+
+  /* ══════════════════════════════════════════
+     HERO — Split composition matching LinkedIn header:
+     Left: white + sage triangles with node network
+     Right: navy gradient with content
+  ══════════════════════════════════════════ */
   #hero {
-    background: var(--navy);
-    padding: 88px 0 72px;
+    background: var(--hero-gradient);
+    min-height: 520px;
+    display: grid;
+    grid-template-columns: 38% 1fr;
     position: relative;
     overflow: hidden;
   }
 
-  .hero-nodes {
-    position: absolute;
-    top: 0; right: 0;
-    width: 45%; height: 100%;
-    opacity: 0.18;
-    pointer-events: none;
+  /* Left geometric area — white background */
+  .hero-geo-area {
+    position: relative;
+    background: var(--white);
+    overflow: hidden;
   }
 
-  .hero-triangle {
-    position: absolute;
-    bottom: 0; right: 0;
-    width: 0; height: 0;
-    border-style: solid;
-    border-width: 0 0 200px 280px;
-    border-color: transparent transparent rgba(219,232,225,0.12) transparent;
-    pointer-events: none;
-  }
-
-  #hero::before {
+  /* The diagonal cut that separates geo area from navy — matches LinkedIn header angle */
+  .hero-geo-area::after {
     content: '';
     position: absolute;
-    top: 0; left: 0;
-    width: 4px; height: 100%;
-    background: var(--red);
+    top: 0; right: -1px;
+    width: 80px; height: 100%;
+    background: var(--hero-gradient);
+    clip-path: polygon(100% 0, 100% 100%, 0 100%);
   }
 
-  .hero-inner { position: relative; z-index: 1; }
+  /* Node network SVG — sits on the white area like the LinkedIn header */
+  .hero-nodes-svg {
+    position: absolute;
+    top: 0; left: 0;
+    width: 90%; height: 85%;
+    opacity: 1;
+  }
+
+  /* Sage triangle — the mint accent block, same composition as the header */
+  .hero-sage-tri {
+    position: absolute;
+    bottom: 0; left: 0;
+    right: 0;
+  }
+
+  /* Right content area */
+  .hero-content-area {
+    padding: 72px 48px 60px 52px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+  }
 
   .hero-eyebrow {
     font-family: var(--font-head);
     font-size: 11px;
     font-weight: 400;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: rgba(219,232,225,0.6);
-    margin-bottom: 18px;
+    color: var(--sage);
+    opacity: 0.75;
+    margin-bottom: 20px;
   }
 
-  #hero h1 {
-    font-family: var(--font-head);
-    font-size: clamp(34px, 5vw, 60px);
-    font-weight: 500;
+  /* Script name — the centerpiece, mirrors how "Joanne Stableford" sits in the header */
+  .hero-script-name {
+    font-family: var(--font-script);
+    font-size: clamp(42px, 5vw, 64px);
+    font-weight: 700;
     color: var(--white);
-    line-height: 1.1;
-    margin-bottom: 24px;
-    max-width: 700px;
+    line-height: 1.05;
+    margin-bottom: 6px;
+    letter-spacing: 0.01em;
   }
 
-  #hero h1 em { font-style: normal; color: var(--sage); }
+  /* Tagline — clean Oswald, wide-spaced caps — mirrors "OPERATIONS LEADER" in header */
+  .hero-tagline {
+    font-family: var(--font-head);
+    font-size: clamp(13px, 1.5vw, 16px);
+    font-weight: 400;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 32px;
+    opacity: 0.9;
+  }
 
-  .hero-sub {
-    font-size: 17px;
+  .hero-body {
+    font-size: 16px;
     font-weight: 300;
     color: rgba(219,232,225,0.72);
-    max-width: 520px;
     line-height: 1.75;
-    margin-bottom: 40px;
+    max-width: 440px;
+    margin-bottom: 36px;
   }
 
   .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
 
-  .hero-bottom {
-    margin-top: 64px;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    padding-top: 36px;
+  /* Stats strip — full width below hero */
+  #hero-stats {
+    background: var(--navy-dk);
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .stats-inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 40px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .hero-stat {
-    padding: 0 28px;
-    border-right: 1px solid rgba(255,255,255,0.1);
+  .stat-item {
+    padding: 28px 32px;
+    border-right: 1px solid rgba(255,255,255,0.07);
+    display: flex;
+    align-items: center;
+    gap: 18px;
   }
 
-  .hero-stat:first-child { padding-left: 0; }
-  .hero-stat:last-child { border-right: none; }
+  .stat-item:last-child { border-right: none; }
 
-  .hero-stat-val {
+  .stat-val {
     font-family: var(--font-head);
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 500;
     color: var(--sage);
-    line-height: 1.1;
-    margin-bottom: 5px;
+    white-space: nowrap;
+    flex-shrink: 0;
   }
 
-  .hero-stat-label {
+  .stat-label {
     font-size: 13px;
     font-weight: 300;
-    color: rgba(255,255,255,0.45);
-    line-height: 1.5;
+    color: rgba(255,255,255,0.4);
+    line-height: 1.45;
   }
 
-  /* PROBLEM */
-  #problem { background: var(--cream); padding: 68px 0; }
+  /* ══ PROBLEM ══ */
+  #problem {
+    background: var(--white);
+    padding: 88px 0 72px; /* extra top padding for the diagonal page-header cut */
+  }
 
   .problem-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 64px;
+    gap: 72px;
     align-items: center;
+  }
+
+  /* Sage geometric accent block — decorative triangle echoing header */
+  .problem-geo {
+    position: relative;
+  }
+
+  .problem-geo::before {
+    content: '';
+    position: absolute;
+    top: -24px; left: -24px;
+    width: 80px; height: 80px;
+    background: var(--sage);
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+    opacity: 0.6;
   }
 
   .problem-headline {
@@ -123,15 +183,30 @@
     font-weight: 500;
     color: var(--navy);
     line-height: 1.25;
+    position: relative;
   }
 
   .problem-headline em { font-style: normal; color: var(--red); }
 
-  .problem-body p { font-size: 16px; color: var(--muted); margin-bottom: 14px; line-height: 1.75; }
+  .problem-body p { font-size: 16px; color: var(--muted); margin-bottom: 14px; line-height: 1.78; }
   .problem-body p strong { color: var(--text); font-weight: 500; }
 
-  /* SERVICES PREVIEW */
-  #services-preview { background: var(--offwhite); padding: 80px 0; }
+  /* ══ SERVICES PREVIEW ══ */
+  #services-preview {
+    background: var(--offwhite);
+    padding: 80px 0;
+    position: relative;
+  }
+
+  /* Triangular top edge */
+  #services-preview::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 44px;
+    background: var(--white);
+    clip-path: polygon(0 0, 0 100%, 100% 0);
+  }
 
   .services-header {
     display: flex;
@@ -152,14 +227,14 @@
   .svc-card {
     background: var(--white);
     padding: 36px 32px;
-    border-top: 3px solid transparent;
+    border-left: 4px solid transparent;
     transition: border-color 0.2s, background 0.2s;
     text-decoration: none;
     display: block;
     color: inherit;
   }
 
-  .svc-card:hover { border-top-color: var(--navy); background: var(--sage); }
+  .svc-card:hover { border-left-color: var(--navy); background: var(--sage); }
 
   .svc-num {
     font-family: var(--font-head);
@@ -167,23 +242,55 @@
     font-weight: 400;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: var(--red);
+    color: var(--navy);
+    opacity: 0.5;
     margin-bottom: 12px;
   }
 
   .svc-card h3 { font-size: 18px; font-weight: 500; margin-bottom: 10px; }
   .svc-card p { font-size: 14px; color: var(--muted); line-height: 1.65; }
 
-  /* WHO */
-  #who { background: var(--navy); padding: 68px 0; text-align: center; }
-  #who h2 { color: var(--white); margin-bottom: 10px; }
-  #who .lead { color: rgba(219,232,225,0.65); margin: 0 auto 32px; }
+  /* ══ WHO ══ */
+  #who {
+    background: var(--hero-gradient);
+    padding: 80px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Geometric triangle — bottom right, mirrors header */
+  #who::after {
+    content: '';
+    position: absolute;
+    bottom: 0; right: 0;
+    width: 0; height: 0;
+    border-style: solid;
+    border-width: 0 0 200px 300px;
+    border-color: transparent transparent rgba(219,232,225,0.1) transparent;
+  }
+
+  /* White triangle top-left */
+  #who::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 0; height: 0;
+    border-style: solid;
+    border-width: 120px 160px 0 0;
+    border-color: rgba(255,255,255,0.04) transparent transparent transparent;
+  }
+
+  #who h2 { color: var(--white); margin-bottom: 10px; position: relative; z-index: 1; }
+  #who .lead { color: rgba(219,232,225,0.65); margin: 0 auto 32px; position: relative; z-index: 1; }
 
   .who-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     justify-content: center;
+    position: relative;
+    z-index: 1;
   }
 
   .who-tag {
@@ -194,17 +301,23 @@
     text-transform: uppercase;
     color: rgba(255,255,255,0.85);
     border: 1px solid rgba(219,232,225,0.25);
-    padding: 8px 16px;
+    background: rgba(219,232,225,0.06);
+    padding: 9px 18px;
     border-radius: 2px;
   }
 
-  @media (max-width: 768px) {
-    .problem-grid, .services-grid { grid-template-columns: 1fr; gap: 28px; }
-    .hero-bottom { grid-template-columns: 1fr; gap: 20px; }
-    .hero-stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); padding: 0 0 20px; }
-    .hero-stat:last-child { border-bottom: none; padding-bottom: 0; }
-    .hero-nodes { display: none; }
+  /* ══ RESPONSIVE ══ */
+  @media (max-width: 860px) {
+    #hero { grid-template-columns: 1fr; }
+    .hero-geo-area { display: none; }
+    .hero-content-area { padding: 64px 24px; }
+    .stats-inner { grid-template-columns: 1fr; }
+    .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .stat-item:last-child { border-bottom: none; }
+    .problem-grid { grid-template-columns: 1fr; gap: 32px; }
+    .services-grid { grid-template-columns: 1fr; }
     .services-header { flex-direction: column; align-items: flex-start; }
+    #services-preview::before { display: none; }
   }
 </style>
 </head>
@@ -212,7 +325,10 @@
 
 <nav>
   <div class="nav-inner">
-    <a href="index.html" class="nav-brand">Stableford<span>.</span></a>
+    <a href="index.html" class="nav-brand">
+      <span class="nav-brand-script">Stableford</span>
+      <span class="nav-brand-sub">Solutions · Business Strategy & Operations</span>
+    </a>
     <ul class="nav-links">
       <li><a href="index.html" class="active">Home</a></li>
       <li><a href="services.html">Services</a></li>
@@ -223,57 +339,94 @@
   </div>
 </nav>
 
+<!-- ══ HERO ══ -->
 <section id="hero">
-  <svg class="hero-nodes" viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-    <g stroke="white" stroke-width="0.8" fill="none">
-      <line x1="80" y1="60" x2="200" y2="130"/><line x1="200" y1="130" x2="310" y2="80"/>
-      <line x1="310" y1="80" x2="420" y2="150"/><line x1="200" y1="130" x2="260" y2="240"/>
-      <line x1="260" y1="240" x2="380" y2="280"/><line x1="380" y1="280" x2="420" y2="150"/>
-      <line x1="260" y1="240" x2="140" y2="290"/><line x1="140" y1="290" x2="80" y2="200"/>
-      <line x1="80" y1="200" x2="80" y2="60"/><line x1="310" y1="80" x2="380" y2="280"/>
-      <line x1="140" y1="290" x2="260" y2="360"/><line x1="260" y1="360" x2="380" y2="280"/>
-      <line x1="420" y1="150" x2="460" y2="300"/><line x1="460" y1="300" x2="380" y2="280"/>
-    </g>
-    <g fill="white">
-      <circle cx="80" cy="60" r="3"/><circle cx="200" cy="130" r="4"/><circle cx="310" cy="80" r="3"/>
-      <circle cx="420" cy="150" r="3.5"/><circle cx="260" cy="240" r="4.5"/><circle cx="380" cy="280" r="3"/>
-      <circle cx="140" cy="290" r="3"/><circle cx="80" cy="200" r="2.5"/>
-      <circle cx="260" cy="360" r="3"/><circle cx="460" cy="300" r="2.5"/>
-    </g>
-  </svg>
-  <div class="hero-triangle"></div>
 
-  <div class="container hero-inner">
-    <div class="hero-eyebrow">Stableford Solutions · Business Strategy & Operations</div>
-    <h1>Your organization has <em>outgrown</em> its current systems. Let's build what comes next.</h1>
-    <p class="hero-sub">I work with scaling businesses, nonprofits, and leadership teams to build the operational infrastructure — processes, people systems, governance, and strategy — that matches where they're headed.</p>
+  <!-- LEFT: Geometric composition (white area + triangles + node network) -->
+  <div class="hero-geo-area">
+
+    <!-- Node network — on white background, subtle sage lines (matches LinkedIn header) -->
+    <svg class="hero-nodes-svg" viewBox="0 0 320 440" xmlns="http://www.w3.org/2000/svg">
+      <g stroke="#b8d4c8" stroke-width="1" fill="none" opacity="0.7">
+        <line x1="40" y1="30" x2="140" y2="90"/>
+        <line x1="140" y1="90" x2="220" y2="50"/>
+        <line x1="220" y1="50" x2="290" y2="130"/>
+        <line x1="140" y1="90" x2="160" y2="190"/>
+        <line x1="160" y1="190" x2="260" y2="220"/>
+        <line x1="260" y1="220" x2="290" y2="130"/>
+        <line x1="160" y1="190" x2="80" y2="240"/>
+        <line x1="80" y1="240" x2="40" y2="160"/>
+        <line x1="40" y1="160" x2="40" y2="30"/>
+        <line x1="80" y1="240" x2="120" y2="320"/>
+        <line x1="120" y1="320" x2="220" y2="300"/>
+        <line x1="220" y1="300" x2="260" y2="220"/>
+        <line x1="40" y1="340" x2="120" y2="320"/>
+      </g>
+      <g fill="#b8d4c8" opacity="0.8">
+        <circle cx="40" cy="30" r="3.5"/>
+        <circle cx="140" cy="90" r="5"/>
+        <circle cx="220" cy="50" r="3.5"/>
+        <circle cx="290" cy="130" r="4"/>
+        <circle cx="160" cy="190" r="5.5"/>
+        <circle cx="260" cy="220" r="3.5"/>
+        <circle cx="80" cy="240" r="3.5"/>
+        <circle cx="40" cy="160" r="3"/>
+        <circle cx="120" cy="320" r="4"/>
+        <circle cx="220" cy="300" r="3.5"/>
+        <circle cx="40" cy="340" r="3"/>
+      </g>
+    </svg>
+
+    <!-- Sage triangle — the mint accent block, lower portion of geo area -->
+    <svg class="hero-sage-tri" viewBox="0 0 380 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <polygon points="0,200 380,200 0,30" fill="#dbe8e1" opacity="0.92"/>
+    </svg>
+
+  </div>
+
+  <!-- RIGHT: Navy content area -->
+  <div class="hero-content-area">
+    <div class="hero-eyebrow">Business Strategy & Operations Consulting</div>
+
+    <!-- Script name — the brand centerpiece matching LinkedIn header -->
+    <div class="hero-script-name">Stableford Solutions</div>
+    <div class="hero-tagline">Building infrastructure for organizations that have outgrown their systems</div>
+
+    <p class="hero-body">I work with scaling businesses, nonprofits, and leadership teams to build the operational foundation — processes, people systems, governance, and strategy — that matches where they're headed.</p>
+
     <div class="hero-actions">
-      <a href="contact.html" class="btn btn-primary">Start a Conversation</a>
-      <a href="services.html" class="btn btn-outline-white">What I Do</a>
-    </div>
-
-    <div class="hero-bottom">
-      <div class="hero-stat">
-        <div class="hero-stat-val">10+ Years</div>
-        <div class="hero-stat-label">Senior operations leadership across tech, government, and mission-driven organizations</div>
-      </div>
-      <div class="hero-stat">
-        <div class="hero-stat-val">$600K → $6.5M</div>
-        <div class="hero-stat-label">ARR growth supported as end-to-end operator at a VC-backed startup</div>
-      </div>
-      <div class="hero-stat">
-        <div class="hero-stat-val">3 Engagement Models</div>
-        <div class="hero-stat-label">Project-based, ongoing advisory, or embedded fractional support</div>
-      </div>
+      <a href="contact.html" class="btn btn-primary-light">Start a Conversation</a>
+      <a href="services.html" class="btn btn-outline-sage">What I Do</a>
     </div>
   </div>
 </section>
 
+<!-- Stats strip -->
+<div id="hero-stats">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-val">10+ Years</div>
+      <div class="stat-label">Senior ops leadership across tech, government & mission-driven organizations</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-val">$600K → $6.5M</div>
+      <div class="stat-label">ARR growth supported as end-to-end operator at a VC-backed startup</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-val">3 Models</div>
+      <div class="stat-label">Project-based, ongoing advisory, or embedded fractional support</div>
+    </div>
+  </div>
+</div>
+
+<!-- Problem -->
 <section id="problem">
   <div class="container">
     <div class="problem-grid">
-      <div class="problem-headline">
-        Growth is the goal. But growth without <em>systems</em> creates its own set of problems.
+      <div class="problem-geo">
+        <div class="problem-headline">
+          Growth is the goal. But growth without <em>systems</em> creates its own problems.
+        </div>
       </div>
       <div class="problem-body">
         <p>When an organization outpaces its internal infrastructure, the symptoms show up everywhere: inconsistent processes, unclear accountability, people systems that weren't built for this stage, technology that doesn't connect, and leadership making decisions without the visibility they need.</p>
@@ -284,6 +437,7 @@
   </div>
 </section>
 
+<!-- Services preview -->
 <section id="services-preview">
   <div class="container">
     <div class="services-header">
@@ -318,11 +472,12 @@
   </div>
 </section>
 
+<!-- Who -->
 <section id="who">
   <div class="container">
-    <div class="section-label" style="color:rgba(219,232,225,0.55)">Who I Work With</div>
+    <div class="section-label light">Who I Work With</div>
     <h2>Organizations at an inflection point</h2>
-    <p class="lead">Whether you're a founder who's been doing everything yourself, a nonprofit board that's outgrown its current structure, or a leadership team scaling faster than its systems — the problem looks the same from where I sit.</p>
+    <p class="lead">Whether you're a founder who's been doing everything yourself, a nonprofit board that's outgrown its structure, or a leadership team scaling faster than its systems — the problem looks the same from where I sit.</p>
     <div class="who-tags">
       <div class="who-tag">Scaling Small & Mid-Size Businesses</div>
       <div class="who-tag">Nonprofit & Associations</div>
@@ -338,18 +493,19 @@
   <div class="container">
     <h2>Not sure where to start?</h2>
     <p>Most engagements begin with a short conversation about what's working, what isn't, and where the gaps are.</p>
-    <a href="contact.html" class="btn btn-primary">Let's Talk</a>
+    <a href="contact.html" class="btn btn-primary-light">Let's Talk</a>
   </div>
 </div>
 
 <footer>
   <div class="footer-inner">
-    <div class="footer-brand">Stableford Solutions LLC</div>
+    <div class="footer-brand">Stableford Solutions</div>
     <div class="footer-right">
       <a href="https://www.linkedin.com/in/joanne-stableford" target="_blank" rel="noopener" class="footer-link">LinkedIn</a>
       <span class="footer-copy">© 2026 · Anne Arundel County, Maryland</span>
     </div>
   </div>
 </footer>
+
 </body>
 </html>
