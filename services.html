@@ -12,32 +12,24 @@
 
   .service-inner {
     display: grid;
-    grid-template-columns: 280px 1fr;
+    grid-template-columns: 260px 1fr;
     gap: 72px;
     align-items: start;
   }
 
-  .service-meta { padding-top: 4px; }
-
   .service-num {
     font-family: var(--font-head);
-    font-size: 72px;
+    font-size: 80px;
     font-weight: 700;
     color: var(--sage);
-    line-height: 0.9;
+    line-height: 0.85;
     letter-spacing: -0.02em;
     margin-bottom: 16px;
   }
 
-  .service-meta h2 { font-size: clamp(20px, 2.5vw, 26px); margin-bottom: 0; }
+  .service-meta h2 { font-size: clamp(20px, 2.4vw, 26px); margin-bottom: 0; }
 
-  .service-body > p {
-    font-size: 16px;
-    color: var(--muted);
-    line-height: 1.78;
-    margin-bottom: 28px;
-    max-width: 560px;
-  }
+  .service-body > p { font-size: 16px; color: var(--muted); line-height: 1.8; margin-bottom: 28px; max-width: 560px; }
 
   .service-bullets {
     list-style: none;
@@ -59,55 +51,81 @@
     content: '';
     display: block;
     width: 6px; height: 6px;
-    background: var(--red);
+    background: var(--navy);
     border-radius: 50%;
     flex-shrink: 0;
     margin-top: 6px;
+    opacity: 0.5;
   }
 
   /* ENGAGEMENT MODELS */
-  #models { background: var(--dark); padding: 80px 0; }
-  #models .section-label { color: rgba(219,232,225,0.55); }
+  #models {
+    background: var(--hero-gradient);
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #models::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 0; height: 0;
+    border-style: solid;
+    border-width: 180px 240px 0 0;
+    border-color: rgba(255,255,255,0.05) transparent transparent transparent;
+  }
+
+  #models::after {
+    content: '';
+    position: absolute;
+    bottom: 0; right: 0;
+    width: 0; height: 0;
+    border-style: solid;
+    border-width: 0 0 200px 280px;
+    border-color: transparent transparent rgba(219,232,225,0.08) transparent;
+  }
+
+  #models .section-label { color: rgba(219,232,225,0.7); }
+  #models .section-label::before { background: rgba(219,232,225,0.5); }
   #models h2 { color: var(--white); margin-bottom: 48px; }
 
   .models-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2px;
-    background: rgba(255,255,255,0.05);
+    position: relative;
+    z-index: 1;
   }
 
   .model-card {
-    background: var(--dark);
-    border: 1px solid rgba(255,255,255,0.07);
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(219,232,225,0.12);
+    border-top: 3px solid rgba(219,232,225,0.3);
     padding: 40px 32px;
+    transition: background 0.2s, border-top-color 0.2s;
+  }
+
+  .model-card:hover {
+    background: rgba(219,232,225,0.08);
+    border-top-color: var(--sage);
   }
 
   .model-badge {
-    display: inline-block;
     font-family: var(--font-head);
     font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--red);
-    border: 1px solid rgba(219,31,72,0.35);
-    padding: 5px 12px;
-    border-radius: 2px;
-    margin-bottom: 20px;
-  }
-
-  .model-card h3 { color: var(--white); font-size: 19px; margin-bottom: 8px; }
-
-  .model-tagline {
-    font-size: 13px;
     font-weight: 400;
-    color: rgba(255,255,255,0.5);
-    font-style: italic;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--sage);
+    opacity: 0.8;
     margin-bottom: 14px;
+    display: block;
   }
 
-  .model-card p { font-size: 14px; color: rgba(255,255,255,0.48); line-height: 1.7; }
+  .model-card h3 { color: var(--white); font-size: 20px; margin-bottom: 6px; }
+  .model-tagline { font-size: 13px; font-weight: 300; color: rgba(219,232,225,0.55); font-style: italic; margin-bottom: 16px; }
+  .model-card p { font-size: 14px; color: rgba(219,232,225,0.5); line-height: 1.7; }
 
   @media (max-width: 768px) {
     .service-inner { grid-template-columns: 1fr; gap: 24px; }
@@ -120,7 +138,10 @@
 
 <nav>
   <div class="nav-inner">
-    <a href="index.html" class="nav-brand">Stableford<span>.</span></a>
+    <a href="index.html" class="nav-brand">
+      <span class="nav-brand-script">Stableford</span>
+      <span class="nav-brand-sub">Solutions · Business Strategy &amp; Operations</span>
+    </a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="services.html" class="active">Services</a></li>
@@ -132,6 +153,10 @@
 </nav>
 
 <div class="page-header">
+  <svg class="ph-geo" viewBox="0 0 1000 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <polygon points="0,0 300,0 0,220" fill="white" opacity="0.05"/>
+    <polygon points="0,130 190,220 0,220" fill="#dbe8e1" opacity="0.1"/>
+  </svg>
   <div class="container">
     <div class="page-header-label">What I Do</div>
     <h1>Services</h1>
@@ -139,7 +164,6 @@
   </div>
 </div>
 
-<!-- 01 -->
 <div class="service-block" id="biz-ops">
   <div class="container">
     <div class="service-inner">
@@ -149,7 +173,7 @@
       </div>
       <div class="service-body">
         <p>Most growing organizations have processes — they just haven't designed them intentionally. Work happens, but inconsistently. Systems exist, but they don't talk to each other. Compliance is managed reactively. Technology gets adopted without a plan for how it fits together.</p>
-        <p>I build the operational infrastructure that makes a business run deliberately — from core process design through technology selection, implementation, and the compliance and business enablement systems that support growth into new markets or channels.</p>
+        <p>I build the operational infrastructure that makes a business run deliberately — from core process design through technology selection, implementation, migration, and the compliance and business enablement systems that support growth into new markets or channels.</p>
         <ul class="service-bullets">
           <li>Process design and standardization</li>
           <li>Technology selection and implementation</li>
@@ -165,7 +189,6 @@
   </div>
 </div>
 
-<!-- 02 -->
 <div class="service-block" id="hr-people">
   <div class="container">
     <div class="service-inner">
@@ -191,7 +214,6 @@
   </div>
 </div>
 
-<!-- 03 -->
 <div class="service-block" id="governance">
   <div class="container">
     <div class="service-inner">
@@ -217,7 +239,6 @@
   </div>
 </div>
 
-<!-- 04 -->
 <div class="service-block" id="strategy">
   <div class="container">
     <div class="service-inner">
@@ -243,29 +264,28 @@
   </div>
 </div>
 
-<!-- ENGAGEMENT MODELS -->
 <section id="models">
   <div class="container">
-    <div class="section-label">How I Engage</div>
+    <div class="section-label light">How I Engage</div>
     <h2>Three ways to work together</h2>
     <div class="models-grid">
       <div class="model-card">
-        <div class="model-badge">Project-Based</div>
+        <span class="model-badge">Project-Based</span>
         <h3>Defined Scope</h3>
         <p class="model-tagline">A specific system or process, built and handed off.</p>
-        <p>Best for organizations that have identified a clear problem — a governance framework that needs designing, a technology migration that needs managing, an HR policy set that needs building. We define the scope, I deliver, and your team owns it from day one.</p>
+        <p>Best for organizations that have identified a clear problem. We define the scope, I deliver, and your team owns it from day one.</p>
       </div>
       <div class="model-card">
-        <div class="model-badge">Advisory</div>
+        <span class="model-badge">Advisory</span>
         <h3>Ongoing Support</h3>
         <p class="model-tagline">A thinking partner available when you need one.</p>
-        <p>Best for leadership teams that have internal capacity but benefit from experienced outside perspective on operations, people decisions, governance questions, and organizational changes as they arise. Light-touch, high-value, no retainer bloat.</p>
+        <p>Best for leadership teams that have internal capacity but benefit from experienced outside perspective on operations, people decisions, and governance as they arise.</p>
       </div>
       <div class="model-card">
-        <div class="model-badge">Embedded / Fractional</div>
+        <span class="model-badge">Embedded / Fractional</span>
         <h3>Inside the Organization</h3>
         <p class="model-tagline">Working alongside your team over time.</p>
-        <p>Best for organizations that need more than a project deliverable — they need an experienced operator helping to build, implement, and refine systems over a sustained period. The fractional model gives you senior-level operational leadership without the full-time overhead.</p>
+        <p>Best for organizations that need more than a project deliverable — they need an experienced operator helping to build, implement, and refine systems over a sustained period.</p>
       </div>
     </div>
   </div>
@@ -275,13 +295,13 @@
   <div class="container">
     <h2>Not sure which fits your situation?</h2>
     <p>Most engagements start with a conversation. Let's figure out what makes sense together.</p>
-    <a href="contact.html" class="btn btn-primary">Get in Touch</a>
+    <a href="contact.html" class="btn btn-primary-light">Get in Touch</a>
   </div>
 </div>
 
 <footer>
   <div class="footer-inner">
-    <div class="footer-brand">Stableford Solutions LLC</div>
+    <div class="footer-brand">Stableford Solutions</div>
     <div class="footer-right">
       <a href="https://www.linkedin.com/in/joanne-stableford" target="_blank" rel="noopener" class="footer-link">LinkedIn</a>
       <span class="footer-copy">© 2026 · Anne Arundel County, Maryland</span>
