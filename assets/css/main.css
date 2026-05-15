@@ -1,22 +1,14 @@
 /* ── STABLEFORD SOLUTIONS — MAIN STYLES ── */
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Oswald:wght@400;500;600&family=Roboto:wght@400;500&display=swap');
 
-/*
-  FONT NOTE: Great Vibes is the closest Google Fonts match to Amsterdam Four.
-  To use Amsterdam Four:
-    1. Purchase a commercial license and add AmsterdamFour.woff2 to assets/fonts/
-    2. Add this @font-face rule:
-
-  @font-face {
-    font-family: 'Amsterdam Four';
-    src: url('/assets/fonts/AmsterdamFour.woff2') format('woff2');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-  }
-
-    3. Update --font-script below to: 'Amsterdam Four', cursive
-*/
+/* Local Font */
+@font-face {
+  font-family: 'Amsterdam Four';
+  src: url('assets/fonts/amsterdam-four.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
   --navy:     #034687;
@@ -32,7 +24,7 @@
   --muted:    #4a5468;
   --border:   #dce3ec;
 
-  --font-script: 'Great Vibes', cursive;
+  --font-script: 'Amsterdam Four', cursive;
   --font-head:   'Oswald', sans-serif;
   --font-body:   'Roboto', sans-serif;
   --max-w: 1120px;
