@@ -51,7 +51,7 @@
 
 .hero-script-name {
   font-family: var(--font-script);
-  font-size: 40px;
+  font-size: 48px;
   font-weight: 300;
   color: var(--white);
   line-height: 1.05;
@@ -66,8 +66,8 @@
   text-transform: uppercase;
   color: var(--sage);
   opacity: 0.9;
-  margin-left: 90px;
-  line-height: 1.5;
+  margin-left: 60px;
+  line-height: 1.75;
 }
 
 .hero-tagline {
