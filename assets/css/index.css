@@ -43,13 +43,31 @@
   display: block;
 }
 
+/* Brand block mirrors nav pattern: script name + indented sub */
+.hero-brand {
+  margin-bottom: 20px;
+  line-height: 1;
+}
+
 .hero-script-name {
   font-family: var(--font-script);
   font-size: clamp(44px, 5vw, 64px);
   font-weight: 400;
   color: var(--white);
   line-height: 1.05;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
+}
+
+.hero-brand-sub {
+  font-family: var(--font-head);
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sage);
+  opacity: 0.9;
+  margin-left: 30px;
+  line-height: 1;
 }
 
 .hero-tagline {
