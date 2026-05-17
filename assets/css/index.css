@@ -15,7 +15,7 @@
   content: '';
   position: absolute;
   top: 0; right: -1px;
-  width: 80px; height: 100%;
+  width: 120px; height: 100%;
   background: var(--hero-gradient);
   clip-path: polygon(100% 0, 100% 100%, 0 100%);
 }
@@ -24,7 +24,7 @@
 .hero-sage-tri  { position: absolute; bottom: 0; left: 0; right: 0; }
 
 .hero-content-area {
-  padding: 72px 48px 60px 52px;
+  padding: 0px 48px 60px 52px;
   display: flex;
   flex-direction: column;
   justify-content: center;
