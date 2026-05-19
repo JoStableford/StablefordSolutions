@@ -312,11 +312,11 @@ h3 {
 .cta-banner::before {
   content: '';
   position: absolute;
-  bottom: 0; right: 0;
+  top: 0; right: 0;
   width: 0; height: 0;
   border-style: solid;
-  border-width: 0 0 160px 220px;
-  border-color: transparent transparent rgba(219,232,225,0.08) transparent;
+  border-width: 160px 0 0 220px;
+  border-color: rgba(219,232,225,0.1) transparent transparent transparent;
   pointer-events: none;
 }
 
