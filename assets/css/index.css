@@ -20,7 +20,7 @@
   clip-path: polygon(100% 0, 100% 100%, 0 100%);
 }
 
-.hero-nodes-svg { position: absolute; top: 0; left: 0; width: 225%; height: 100%; }
+.hero-nodes-svg { position: absolute; top: 0; left: 0; width: 225%; height: 200%; }
 .hero-sage-tri  { position: absolute; bottom: 0; left: 0; right: 0; }
 
 .hero-content-area {
