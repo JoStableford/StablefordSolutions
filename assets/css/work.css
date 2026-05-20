@@ -17,20 +17,18 @@
 .work-body p { font-size: 16px; font-weight: 400; color: var(--muted); line-height: 1.78; max-width: 640px; }
 .work-outcome { font-size: 16px; font-weight: 500; color: var(--navy); margin-top: 14px; }
 
-#common { background: var(--hero-gradient); padding: 72px 0; position: relative; overflow: hidden; }
-#common::before { content: ''; position: absolute; top: 0; left: 0; width: 0; height: 0; border-style: solid; border-width: 140px 200px 0 0; border-color: rgba(255,255,255,0.05) transparent transparent transparent; }
-#common::after { content: ''; position: absolute; bottom: 0; right: 0; width: 0; height: 0; border-style: solid; border-width: 0 0 160px 240px; border-color: transparent transparent rgba(219,232,225,0.08) transparent; }
-
+#common { padding: 72px 0; }
+ 
 .common-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; position: relative; z-index: 1; }
 #common .section-label { color: var(--sage); opacity: 0.8; }
 #common .section-label::before { background: var(--sage); opacity: 0.5; }
 #common h2 { color: var(--white); margin-bottom: 12px; }
 #common .lead { color: #c8dbd4; margin-bottom: 0; }
-
+ 
 .common-list { list-style: none; border-top: 1px solid rgba(255,255,255,0.1); }
 .common-list li { padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.1); font-size: 16px; font-weight: 400; color: #c8dbd4; display: flex; gap: 12px; align-items: flex-start; }
 .common-list li::before { content: '→'; color: var(--sage); flex-shrink: 0; opacity: 0.7; }
-
+ 
 @media (max-width: 768px) {
   .work-item { grid-template-columns: 44px 1fr; gap: 20px; }
   .common-grid { grid-template-columns: 1fr; gap: 32px; }
