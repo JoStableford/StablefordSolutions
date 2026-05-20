@@ -225,7 +225,7 @@ nav {
 .section-gradient::before {
   content: '';
   position: absolute;
-  top: 0; right: 0;
+  top: 0; left: 0;
   width: 0; height: 0;
   border-style: solid;
   border-width: 120px 160px 0 0;
@@ -235,7 +235,7 @@ nav {
  .section-gradient::after {
   content: '';
   position: absolute;
-  top: 0; right: 0;
+  bottom: 0; right: 0;
   width: 0; height: 0;
   border-style: solid;
   border-width: 0 0 200px 300px;
@@ -265,12 +265,6 @@ nav {
   border-color: transparent transparent rgba(255,255,255,0.04) transparent;
   pointer-events: none;
 }
-
-.section-gradient h2 { color: var(--white); margin-bottom: 10px; }
-.section-gradient p { font-size: 16px; font-weight: 400; color: #c8dbd4; max-width: 460px; margin: 0 auto 28px; }
-
-
-.section-gradient-flip {
 
 .section-label {
   font-family: var(--font-head);
