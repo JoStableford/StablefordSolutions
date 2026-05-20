@@ -15,23 +15,21 @@
 .service-bullets li { font-size: 16px; font-weight: 400; color: var(--text); display: flex; align-items: flex-start; gap: 10px; line-height: 1.5; }
 .service-bullets li::before { content: ''; display: block; width: 6px; height: 6px; background: var(--navy); border-radius: 50%; flex-shrink: 0; margin-top: 8px; opacity: 0.45; }
 
-#models { background: var(--hero-gradient); padding: 80px 0; position: relative; overflow: hidden; }
-#models::before { content: ''; position: absolute; top: 0; left: 0; width: 0; height: 0; border-style: solid; border-width: 180px 240px 0 0; border-color: rgba(255,255,255,0.05) transparent transparent transparent; }
-#models::after { content: ''; position: absolute; bottom: 0; right: 0; width: 0; height: 0; border-style: solid; border-width: 0 0 200px 280px; border-color: transparent transparent rgba(219,232,225,0.08) transparent; }
+#models { padding: 80px 0; }
 #models .section-label { color: var(--sage); opacity: 0.8; }
 #models .section-label::before { background: var(--sage); opacity: 0.5; }
 #models h2 { color: var(--white); margin-bottom: 48px; }
-
+ 
 .models-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; position: relative; z-index: 1; }
-
+ 
 .model-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(219,232,225,0.12); border-top: 3px solid rgba(219,232,225,0.3); padding: 40px 32px; transition: background 0.2s, border-top-color 0.2s; }
 .model-card:hover { background: rgba(219,232,225,0.08); border-top-color: var(--sage); }
-
+ 
 .model-badge { font-family: var(--font-head); font-size: 16px; font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase; color: #c8dbd4; margin-bottom: 14px; display: block; }
 .model-card h3 { color: var(--white); font-size: 22px; margin-bottom: 6px; }
 .model-tagline { font-size: 16px; font-weight: 400; color: #9dbece; font-style: italic; margin-bottom: 16px; }
 .model-card p { font-size: 16px; font-weight: 400; color: #9dbece; line-height: 1.7; }
-
+ 
 @media (max-width: 768px) {
   .service-inner { grid-template-columns: 1fr; gap: 24px; }
   .service-bullets { grid-template-columns: 1fr; }
