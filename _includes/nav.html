@@ -4,7 +4,13 @@
       <span class="nav-brand-script">Stableford</span>
       <span class="nav-brand-sub">Solutions</span>
     </a>
-    <ul class="nav-links">
+    <button class="nav-toggle"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="nav-menu">
+      <span class="nav-toggle-icon"></span>
+    </button>
+    <ul class="nav-links" id="nav-menu">
       {% for item in site.data.navigation %}
       <li>
         <a href="{{ item.url | relative_url }}"
