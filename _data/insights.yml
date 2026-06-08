@@ -1,0 +1,39 @@
+# ── INSIGHTS DATA ──────────────────────────────────────────────────────────
+#
+# Each entry renders as a card on /insights/.
+#
+# Fields:
+#   title       — display title
+#   date        — publication date (YYYY-MM-DD)
+#   type        — label shown on the card: Article | Tool | Link | Framework
+#   description — your take in 2–3 sentences; shown on the card
+#   slug        — folder name under /insights/ (internal pieces only)
+#   url         — full URL (external pieces only)
+#   external    — true for outbound links, false (or omit) for site-hosted pieces
+#
+# ───────────────────────────────────────────────────────────────────────────
+
+- title: "Delegation isn't the problem. Your operating model is."
+  date: "2026-06-08"
+  type: Article
+  description: "Why delegation often fails when organizations assign work without transferring the capacity, clarity, authority, and recovery systems needed for real ownership."
+  slug: delegation-isnt-the-problem
+  external: false
+
+# ── EXAMPLES of other entry types (uncomment and fill in to use) ──────────
+#
+# External link with context:
+# - title: "Title of the External Article"
+#   date: "2026-06-01"
+#   type: Link
+#   description: "Why I found this useful and what it made me think about. Good for practitioners navigating X."
+#   url: "https://example.com/article"
+#   external: true
+#
+# A tool or template you've made available:
+# - title: "Executive Performance Review Template"
+#   date: "2026-06-01"
+#   type: Tool
+#   description: "The framework I use when designing governance-aligned review processes for nonprofit boards."
+#   slug: executive-review-template
+#   external: false
