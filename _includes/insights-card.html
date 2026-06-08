@@ -1,0 +1,13 @@
+<article class="insight-card">
+  <div class="insight-card-meta">
+    <span class="insight-type">{{ include.entry.type }}</span>
+    <span class="insight-date">{{ include.entry.date | date: "%B %Y" }}</span>
+  </div>
+  <h3 class="insight-card-title">{{ include.entry.title }}</h3>
+  <p class="insight-card-desc">{{ include.entry.description }}</p>
+  <a href="{% if include.entry.external %}{{ include.entry.url }}{% else %}/insights/{{ include.entry.slug }}/{% endif %}"
+     class="btn btn-outline insight-card-cta"
+     {% if include.entry.external %}target="_blank" rel="noopener"{% endif %}>
+    {% if include.entry.external %}Read Article →{% else %}Read →{% endif %}
+  </a>
+</article>
