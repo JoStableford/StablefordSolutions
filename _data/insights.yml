@@ -9,6 +9,7 @@
 #   description — your take in 2–3 sentences; shown on the card
 #   slug        — folder name under /insights/ (internal pieces only)
 #   url         — full URL (external pieces only)
+#   image       - location of image to be used on card
 #   external    — true for outbound links, false (or omit) for site-hosted pieces
 #
 # ───────────────────────────────────────────────────────────────────────────
@@ -18,6 +19,7 @@
   type: Article
   description: "Why delegation often fails when organizations assign work without transferring the capacity, clarity, authority, and recovery systems needed for real ownership."
   slug: delegation-isnt-the-problem
+  image: /assets/photos/backstop-image.png
   external: false
 
 # ── EXAMPLES of other entry types (uncomment and fill in to use) ──────────
