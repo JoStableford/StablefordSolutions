@@ -35,7 +35,7 @@
   height: 65%;
   background: var(--sage);
   opacity: 0.92;
-  clip-path: polygon(0 0, 100% 100%, 0 100%);
+  clip-path: polygon(0 60%, 100% 100%, 0 100%);
   pointer-events: none;
   z-index: 1;
 }
