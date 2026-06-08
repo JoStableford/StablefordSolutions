@@ -22,10 +22,22 @@
 
 .insight-card:hover { border-top-color: var(--navy); }
 
+.insight-card--has-image {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 40px;
+  align-items: stretch;
+}
+
+.insight-card-body {
+  display: flex;
+  flex-direction: column;
+}
+
 .insight-card-image {
-  margin: -36px -32px 28px;
   overflow: hidden;
-  aspect-ratio: 16 / 9;
+  border-radius: 2px;
+  min-height: 220px;
 }
 
 .insight-card-image img {
@@ -203,4 +215,6 @@
   .insights-grid { grid-template-columns: 1fr; }
   .article-wrap { padding: 0 20px; }
   .article-body h2 { margin-top: 36px; padding-top: 36px; }
+  .insight-card--has-image { grid-template-columns: 1fr; }
+  .insight-card-image { min-height: 200px; }
 }
