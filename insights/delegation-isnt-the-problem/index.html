@@ -14,15 +14,16 @@ image: /assets/photos/backstop-image.png
   <div class="article-wrap">
 
     <a href="/insights/" class="article-back">← Back to Insights</a>
-
+    
+    {% if page.image %}
+    <figure class="article-hero-image">
+      <img src="{{ page.image }}" alt="{{ page.title }}">
+    </figure>
+    {% endif %}
+    
     <div class="article-meta">
       <span class="insight-type">Article</span>
       <span class="insight-date">June 2026</span>
-      {% if page.image %}
-      <figure class="article-hero-image">
-        <img src="{{ page.image }}" alt="{{ page.title }}">
-      </figure>
-      {% endif %}
     </div>
 
     <div class="article-body">
