@@ -28,7 +28,7 @@
   object-position: top left;
 }
 
-.hero-sage-tri  { position: absolute; bottom: 0; left: 0; right: 0; }
+.hero-sage-tri  { position: absolute; bottom: 0; left: 0; right: 0; z-index: 1; }
 
 .hero-content-area {
   padding: 72px 48px 60px 52px;
