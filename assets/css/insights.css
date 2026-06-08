@@ -141,6 +141,20 @@
   margin-bottom: 40px;
 }
 
+.article-hero-image {
+  margin: 0 0 48px;
+  overflow: hidden;
+  border-radius: 3px;
+}
+
+.article-hero-image img {
+  width: 100%;
+  height: auto;
+  max-height: 480px;
+  object-fit: cover;
+  display: block;
+}
+
 /* Article body typography */
 .article-body { color: var(--text); }
 
