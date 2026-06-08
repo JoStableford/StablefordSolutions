@@ -238,9 +238,10 @@
 
 
 .article-callout p:first-child {
-  font-family: var(--font-mono);
-  color: var(--muted);
-  font-size: 0.95rem;
+  display: inline-block;
+  font-weight: 700;
+  color: var(--navy);
+  text-decoration: none;
 }
 .article-callout p:last-child {
   margin-bottom: 0;
