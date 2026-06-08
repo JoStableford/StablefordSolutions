@@ -1,18 +1,20 @@
-<article class="insight-card">
+<article class="insight-card {% if include.entry.image %}insight-card--has-image{% endif %}">
+  <div class="insight-card-body">
+    <div class="insight-card-meta">
+      <span class="insight-type">{{ include.entry.type }}</span>
+      <span class="insight-date">{{ include.entry.date | date: "%B %Y" }}</span>
+    </div>
+    <h3 class="insight-card-title">{{ include.entry.title }}</h3>
+    <p class="insight-card-desc">{{ include.entry.description }}</p>
+    <a href="{% if include.entry.external %}{{ include.entry.url }}{% else %}/insights/{{ include.entry.slug }}/{% endif %}"
+       class="btn btn-outline insight-card-cta"
+       {% if include.entry.external %}target="_blank" rel="noopener"{% endif %}>
+      {% if include.entry.external %}Read Article →{% else %}Read →{% endif %}
+    </a>
+  </div>
   {% if include.entry.image %}
   <div class="insight-card-image">
     <img src="{{ include.entry.image }}" alt="{{ include.entry.title }}">
   </div>
   {% endif %}
-  <div class="insight-card-meta">
-    <span class="insight-type">{{ include.entry.type }}</span>
-    <span class="insight-date">{{ include.entry.date | date: "%B %Y" }}</span>
-  </div>
-  <h3 class="insight-card-title">{{ include.entry.title }}</h3>
-  <p class="insight-card-desc">{{ include.entry.description }}</p>
-  <a href="{% if include.entry.external %}{{ include.entry.url }}{% else %}/insights/{{ include.entry.slug }}/{% endif %}"
-     class="btn btn-outline insight-card-cta"
-     {% if include.entry.external %}target="_blank" rel="noopener"{% endif %}>
-    {% if include.entry.external %}Read Article →{% else %}Read →{% endif %}
-  </a>
 </article>
