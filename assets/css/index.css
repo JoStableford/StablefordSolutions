@@ -28,7 +28,17 @@
   object-position: top left;
 }
 
-.hero-sage-tri  { position: absolute; bottom: 0; left: 0; right: 0; z-index: 1; }
+.hero-geo-area::before {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 65%;
+  background: var(--sage);
+  opacity: 0.92;
+  clip-path: polygon(0 0, 100% 100%, 0 100%);
+  pointer-events: none;
+  z-index: 1;
+}
 
 .hero-content-area {
   padding: 72px 48px 60px 52px;
