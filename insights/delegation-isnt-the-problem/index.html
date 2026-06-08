@@ -7,6 +7,7 @@ page_js: main
 header_label: Article
 header_title: Delegation isn't the problem. Your operating model is.
 header_desc: The hidden cost of being the backstop.
+image: /assets/photos/backstop-image.png
 ---
 
 <article id="article-content">
@@ -17,6 +18,11 @@ header_desc: The hidden cost of being the backstop.
     <div class="article-meta">
       <span class="insight-type">Article</span>
       <span class="insight-date">June 2026</span>
+      {% if page.image %}
+      <figure class="article-hero-image">
+        <img src="{{ page.image }}" alt="{{ page.title }}">
+      </figure>
+      {% endif %}
     </div>
 
     <div class="article-body">
