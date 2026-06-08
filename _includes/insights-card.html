@@ -1,4 +1,9 @@
 <article class="insight-card">
+  {% if include.entry.image %}
+  <div class="insight-card-image">
+    <img src="{{ include.entry.image }}" alt="{{ include.entry.title }}">
+  </div>
+  {% endif %}
   <div class="insight-card-meta">
     <span class="insight-type">{{ include.entry.type }}</span>
     <span class="insight-date">{{ include.entry.date | date: "%B %Y" }}</span>
