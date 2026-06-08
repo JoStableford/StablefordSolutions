@@ -1,0 +1,26 @@
+---
+layout: page
+title: Insights
+description: Writing, tools, and things worth reading — on operations, governance, organizational design, and the work of building systems that last.
+page_css: insights
+page_js: main
+header_label: Writing & Resources
+header_title: Insights
+header_desc: Writing, tools, and things worth reading — on operations, governance, and the work of building systems that last.
+---
+
+<section id="insights-list">
+  <div class="container">
+
+    {% if site.data.insights.size == 0 %}
+      <p class="insights-empty">Nothing here yet — check back soon.</p>
+    {% else %}
+      <div class="insights-grid">
+        {% for entry in site.data.insights %}
+          {% include insights-card.html entry=entry %}
+        {% endfor %}
+      </div>
+    {% endif %}
+
+  </div>
+</section>

@@ -1,0 +1,188 @@
+/* ── INSIGHTS PAGE ── */
+
+/* ── Index: card grid ── */
+
+#insights-list { padding: 72px 0 88px; }
+
+.insights-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+  background: var(--border);
+}
+
+.insight-card {
+  background: var(--white);
+  padding: 36px 32px;
+  border-top: 3px solid transparent;
+  display: flex;
+  flex-direction: column;
+  transition: border-top-color 0.2s;
+}
+
+.insight-card:hover { border-top-color: var(--navy); }
+
+.insight-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.insight-type {
+  font-family: var(--font-head);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--white);
+  background: var(--navy);
+  padding: 4px 10px;
+  border-radius: 2px;
+}
+
+.insight-date {
+  font-family: var(--font-head);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+.insight-card-title {
+  font-family: var(--font-head);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--navy);
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+.insight-card-desc {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--muted);
+  line-height: 1.7;
+  flex-grow: 1;        /* pushes the CTA to the bottom of each card */
+  margin-bottom: 28px;
+}
+
+.insight-card-cta { align-self: flex-start; }
+
+.insights-empty {
+  font-size: 16px;
+  color: var(--muted);
+  padding: 48px 0;
+  text-align: center;
+}
+
+/* ── Article reading layout ── */
+
+#article-content { padding: 64px 0 96px; }
+
+.article-wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.article-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-head);
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--navy);
+  text-decoration: none;
+  margin-bottom: 52px;
+  opacity: 0.65;
+  transition: opacity 0.2s, color 0.2s;
+}
+
+.article-back:hover { opacity: 1; color: var(--red); }
+
+.article-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+/* Article body typography */
+.article-body { color: var(--text); }
+
+.article-lede {
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 32px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--border);
+}
+
+.article-body p {
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.85;
+  color: var(--text);
+  margin-bottom: 24px;
+}
+
+.article-body h2 {
+  font-size: clamp(22px, 2.5vw, 28px);
+  font-weight: 500;
+  color: var(--navy);
+  margin-top: 52px;
+  margin-bottom: 20px;
+  padding-top: 52px;
+  border-top: 1px solid var(--border);
+}
+
+.article-body h3 {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--navy);
+  margin-top: 36px;
+  margin-bottom: 14px;
+}
+
+.article-body blockquote {
+  border-left: 3px solid var(--sage-dk);
+  margin: 36px 0;
+  padding: 4px 0 4px 28px;
+}
+
+.article-body blockquote p {
+  font-size: 19px;
+  font-weight: 400;
+  color: var(--muted);
+  line-height: 1.7;
+  font-style: italic;
+  margin-bottom: 0;
+}
+
+.article-body ul,
+.article-body ol {
+  margin: 0 0 24px 24px;
+}
+
+.article-body li {
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.85;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.article-body strong { font-weight: 500; color: var(--navy); }
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .insights-grid { grid-template-columns: 1fr; }
+  .article-wrap { padding: 0 20px; }
+  .article-body h2 { margin-top: 36px; padding-top: 36px; }
+}
