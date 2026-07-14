@@ -111,7 +111,7 @@
 #article-content { padding: 64px 0 96px; }
 
 .article-wrap {
-  max-width: 720px;
+  max-width: 900px;
   margin: 0 auto;
   padding: 0 40px;
 }
@@ -213,13 +213,13 @@
   margin: 42px 0;
   padding: 24px 28px;
   border-left: 5px solid var(--red);
-  background: var(--sage);
+  background: var(--sage); opacity: 0.8;
   color: var(--navy-dk);
 }
 
 .article-body blockquote.insight-callout p {
   font-family: var(--font-head);
-  font-size: clamp(22px, 3vw, 30px);
+  font-size: clamp(18px, 3vw, 20px);
   font-weight: 500;
   line-height: 1.35;
   color: var(--navy-dk);
