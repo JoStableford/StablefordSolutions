@@ -15,6 +15,12 @@ image: /assets/photos/cos-solving.png
 
     <a class="article-back" href="/insights/">← Back to Insights</a>
 
+    {% if page.image %}
+    <figure class="article-hero-image">
+      <img src="{{ page.image }}" alt="{{ page.title }}">
+    </figure>
+    {% endif %}
+    
     <div class="article-meta">
       <span class="insight-type">Leadership</span>
       <span class="insight-type">HR</span>
