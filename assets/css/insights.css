@@ -209,6 +209,24 @@
   margin-bottom: 0;
 }
 
+.article-body blockquote.insight-callout {
+  margin: 42px 0;
+  padding: 24px 28px;
+  border-left: 5px solid var(--red);
+  background: var(--sage);
+  color: var(--navy-dk);
+}
+
+.article-body blockquote.insight-callout p {
+  font-family: var(--font-head);
+  font-size: clamp(22px, 3vw, 30px);
+  font-weight: 500;
+  line-height: 1.35;
+  color: var(--navy-dk);
+  font-style: normal;
+  margin: 0;
+}
+
 .article-body ul,
 .article-body ol {
   margin: 0 0 24px 24px;
@@ -279,5 +297,14 @@
 
   .article-callout p:first-child {
     font-size: 0.9rem;
+  }
+
+  .article-body blockquote.insight-callout {
+    margin: 32px 0;
+    padding: 20px 22px;
+  }
+
+  .article-body blockquote.insight-callout p {
+    font-size: 22px;
   }
 }
